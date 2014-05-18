@@ -29,6 +29,8 @@ debugCompile 'com.ivankocijan.magicviews'
 
 ## Suported views
 * TextView
+* EditText
+* Button
 
 ## Contributing
 
