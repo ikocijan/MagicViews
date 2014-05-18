@@ -27,8 +27,6 @@ debugCompile 'com.ivankocijan.magicviews'
         app:typeFace="cha_chicle.otf"/>
 ```
 
-You can add your font anywhere in assets folder. Check TestApp for example.
-
 ## Suported views
 * TextView
 
