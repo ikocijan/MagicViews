@@ -74,9 +74,9 @@ uploadArchives {
             url 'www.ivankocijan.com'
 
             scm {
-                url 'scm:git@bitbucket.org:infinum_hr/android-labs.git'
-                connection 'scm:git@bitbucket.org:infinum_hr/android-labs.git'
-                developerConnection 'scm:git@bitbucket.org:infinum_hr/android-labs.git'
+                url 'scm:git@github.com:ikocijan/MagicViews.git'
+                connection 'scm:git@github.com:ikocijan/MagicViews.git'
+                developerConnection 'scm:git@github.com:ikocijan/MagicViews.git'
             }
 
             licenses {
