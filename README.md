@@ -3,6 +3,8 @@ MagicViews
 
 Provides a simple way to set custom font in Android application.
 
+![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot.jpg)
+
 ## Usage
 
 Add the library as a dependency to your ```build.gradle```
