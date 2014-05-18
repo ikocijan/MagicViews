@@ -6,7 +6,7 @@ Provides a simple way to set custom font in Android applications.
 
 
 
-### ## Usage
+## Usage
 
 Add the library as a dependency to your ```build.gradle```
 
@@ -34,5 +34,3 @@ debugCompile 'com.ivankocijan.magicviews'
     See the License for the specific language governing permissions and
     limitations under the License.
     
-    
-[1]:http://search.maven.org/remotecontent?filepath=com/ctrlplusz/anytextview/1.1/anytextview-1.1.apklib
