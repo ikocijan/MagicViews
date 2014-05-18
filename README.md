@@ -7,13 +7,18 @@ Provides a simple way to set custom font in Android application.
 
 ## Usage
 
-Add the library as a dependency to your ```build.gradle```
+1) Add the library as a dependency to your ```build.gradle```
 
 ```groovy
 debugCompile 'com.ivankocijan.magicviews'
 ```
 
-Add typeface to your assets folder and instead of TextView use <code>com.ivankocijan.magicviews.views.MagicTextView</code>
+2) Add your application namespace to the root element in the XML 
+   <code> xmlns:app="http://schemas.android.com/apk/res-auto"</code> 
+
+3) Add typeface to your assets folder. You can add your font anywhere in assets folder. Check TestApp for example.
+
+4) Instead of TextView use <code>com.ivankocijan.magicviews.views.MagicTextView</code>
 
 ```xml
     <com.ivankocijan.magicviews.views.MagicTextView
@@ -21,8 +26,6 @@ Add typeface to your assets folder and instead of TextView use <code>com.ivankoc
         android:layout_height="wrap_content"
         app:typeFace="cha_chicle.otf"/>
 ```
-
-You can add your font anywhere in assets folder. Check TestApp for example.
 
 ## Suported views
 * TextView
