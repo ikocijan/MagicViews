@@ -15,7 +15,6 @@ public class FontUtils {
 
     public static void setTypeface (Context ctx, AttributeSet attrs, TextView view) {
 
-
         TypedArray a = ctx.obtainStyledAttributes(attrs, R.styleable.MagicTextView);
         String fontStyle = a.getString(R.styleable.MagicTextView_typeFace);
         view.setTypeface(MagicViews.getTypeface(ctx, fontStyle));
