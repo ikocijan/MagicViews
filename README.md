@@ -1,10 +1,7 @@
 MagicViews
 ==========
 
-Provides a simple way to set custom font in Android applications.
-
-
-
+Provides a simple way to set custom font in Android application.
 
 ## Usage
 
@@ -14,7 +11,7 @@ Add the library as a dependency to your ```build.gradle```
 debugCompile 'com.ivankocijan.magicviews'
 ```
 
-Add typface to your assets folder and instead of TextView use com.ivankocijan.magicviews.views.MagicTextView.
+Add typeface to your assets folder and instead of TextView use <code>com.ivankocijan.magicviews.views.MagicTextView</code>
 
 ```xml
     <com.ivankocijan.magicviews.views.MagicTextView
@@ -23,12 +20,10 @@ Add typface to your assets folder and instead of TextView use com.ivankocijan.ma
         app:typeFace="cha_chicle.otf"/>
 ```
 
+You can add your font anywhere in assets folder. Check TestApp for example.
+
 ## Suported views
 * TextView
-
-#### Version 1.0
-* Added support for TextView
-
 
 ## Contributing
 
