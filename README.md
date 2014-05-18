@@ -14,6 +14,17 @@ Add the library as a dependency to your ```build.gradle```
 debugCompile 'com.ivankocijan.magicviews'
 ```
 
+Add typface to your assets folder and instead of TextView use com.ivankocijan.magicviews.views.MagicTextView.
+
+```xml
+    <com.ivankocijan.magicviews.views.MagicTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:typeFace="cha_chicle.otf"/>
+```
+
+## Suported views
+* TextView
 
 #### Version 1.0
 * Added support for TextView
