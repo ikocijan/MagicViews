@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/FontLibrary.iml" filepath="$PROJECT_DIR$/FontLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MagicViews/MagicViews.iml" filepath="$PROJECT_DIR$/MagicViews/MagicViews.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TestApp/TestApp.iml" filepath="$PROJECT_DIR$/TestApp/TestApp.iml" />
+    </modules>
+  </component>
+</project>
+
