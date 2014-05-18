@@ -17,7 +17,11 @@ public class FontUtils {
 
         TypedArray a = ctx.obtainStyledAttributes(attrs, R.styleable.MagicTextView);
         String fontStyle = a.getString(R.styleable.MagicTextView_typeFace);
-        view.setTypeface(MagicViews.getTypeface(ctx, fontStyle));
+
+        if (fontStyle != null) {
+            view.setTypeface(MagicViews.getTypeface(ctx, fontStyle));
+        }
+
         a.recycle();
 
     }
