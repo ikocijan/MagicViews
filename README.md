@@ -1,5 +1,6 @@
 MagicViews
 ==========
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ivankocijan/MagicViews/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ivankocijan/MagicViews)
 
 Provides a simple way to set custom font in Android application.
 
@@ -10,7 +11,7 @@ Provides a simple way to set custom font in Android application.
 1) Add the library as a dependency to your ```build.gradle```
 
 ```groovy
-compile 'com.ivankocijan:MagicViews:1.0.0@aar
+compile 'com.ivankocijan:MagicViews:1.0.0@aar'
 ```
 
 2) Add your application namespace to the root element in the XML 
