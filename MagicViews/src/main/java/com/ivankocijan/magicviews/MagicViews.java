@@ -13,21 +13,21 @@ import java.util.List;
 /**
  * Created by ivankocijan on 17.05.2014.
  */
-public class MagicViews {
-
+public final class MagicViews {
 
     private AssetManager am;
 
     //list which contains all asset folders
     private ArrayList<String> assetFolders;
+
     //key = font name, value = fontPath
-    private static Hashtable<String, Typeface> fonts = new Hashtable<String, Typeface>();
+    private static final Hashtable<String, Typeface> fonts = new Hashtable<>();
 
     private static Context ctx;
 
     private static MagicViews magicViews;
 
-    public static MagicViews getInstance (Context context) {
+    private static MagicViews getInstance (Context context) {
 
         if (magicViews == null) {
             magicViews = new MagicViews();
@@ -39,18 +39,21 @@ public class MagicViews {
 
     }
 
+    private MagicViews () {
+    }
+
     /**
      * Call this method to initialize app typefaces.
      *
      * @param typefaces typeface name. For example "cha_chicle.otf"
      */
-    public void initTypefaces (String... typefaces) {
+    void initTypefaces (String... typefaces) {
 
         am = ctx.getResources().getAssets();
 
         if (assetFolders == null) {
 
-            assetFolders = new ArrayList<String>();
+            assetFolders = new ArrayList<>();
             assetFolders.add(""); //root folder also needs to be checked
             getAssetFolders("");
 
@@ -159,7 +162,7 @@ public class MagicViews {
      */
     public static Typeface getTypeface (Context ctx, String typeface) {
 
-        if (fonts == null || !fonts.containsKey(typeface)) {
+        if (!fonts.containsKey(typeface)) {
             MagicViews.getInstance(ctx).initTypefaces(typeface);
         }
 

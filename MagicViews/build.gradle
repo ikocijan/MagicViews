@@ -68,7 +68,7 @@ uploadArchives {
         }
 
         pom.project {
-            name 'MagicViews'
+            name 'magicviews'
             packaging 'aar'
             description 'Android font library'
             url 'www.ivankocijan.com'
