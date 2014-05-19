@@ -43,4 +43,10 @@
         app:typeFace="unvoll.ttf"
         android:layout_height="wrap_content"/>
 
+    <com.ivankocijan.magicviews.views.MagicCheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some text"
+        app:typeFace="cha_chicle.otf"/>
+
 </LinearLayout>
