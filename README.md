@@ -10,7 +10,7 @@ Provides a simple way to set custom font in Android application.
 1) Add the library as a dependency to your ```build.gradle```
 
 ```groovy
-debugCompile 'com.ivankocijan.magicviews'
+compile 'com.ivankocijan:MagicViews:1.0.0@aar
 ```
 
 2) Add your application namespace to the root element in the XML 
