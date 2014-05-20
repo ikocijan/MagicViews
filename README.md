@@ -15,7 +15,7 @@ compile 'com.ivankocijan:MagicViews:1.0.0@aar'
 ```
 
 2) Add your application namespace to the root element in the XML
-<code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> 
+    <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> 
 
 3) Add typeface to your assets folder. NOTE You can add your font anywhere in assets folder. Library will automatically find your font. Check TestApp for example.
 
