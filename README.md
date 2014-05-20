@@ -32,6 +32,8 @@ compile 'com.ivankocijan:MagicViews:1.0.0@aar'
 * TextView
 * EditText
 * Button
+* CheckBox
+* CheckedTextView
 
 ## Contributing
 
