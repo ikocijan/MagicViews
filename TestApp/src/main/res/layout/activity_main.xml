@@ -49,4 +49,10 @@
         android:text="Some text"
         app:typeFace="cha_chicle.otf"/>
 
+    <com.ivankocijan.magicviews.views.MagicCheckedTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Something"
+        app:typeFace="gentius.otf"/>
+
 </LinearLayout>
