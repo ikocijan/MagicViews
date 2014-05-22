@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="MagicTextView">
+    <declare-styleable name="MagicFont">
         <attr name="typeFace" format="string"/>
     </declare-styleable>
+
+    <declare-styleable name="MagicPreference">
+        <attr name="prefTypeface" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="MagicSwitchPreference">
+        <attr name="switchPrefTypeface" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="MagicCheckBoxPreference">
+        <attr name="checkBoxTypeface" format="string"/>
+    </declare-styleable>
+
 </resources>

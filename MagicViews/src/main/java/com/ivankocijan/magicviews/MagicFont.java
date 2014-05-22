@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by ivankocijan on 17.05.2014.
  */
-public final class MagicViews {
+public final class MagicFont {
 
     private AssetManager am;
 
@@ -25,21 +25,20 @@ public final class MagicViews {
 
     private static Context ctx;
 
-    private static MagicViews magicViews;
+    private static MagicFont magicFont;
 
-    private static MagicViews getInstance (Context context) {
+    private static MagicFont getInstance (Context context) {
 
-        if (magicViews == null) {
-            magicViews = new MagicViews();
+        if (magicFont == null) {
+            magicFont = new MagicFont();
         }
 
-
         ctx = context;
-        return magicViews;
+        return magicFont;
 
     }
 
-    private MagicViews () {
+    private MagicFont () {
     }
 
     /**
@@ -163,7 +162,7 @@ public final class MagicViews {
     public static Typeface getTypeface (Context ctx, String typeface) {
 
         if (!fonts.containsKey(typeface)) {
-            MagicViews.getInstance(ctx).initTypefaces(typeface);
+            MagicFont.getInstance(ctx).initTypefaces(typeface);
         }
 
         return fonts.get(typeface);
