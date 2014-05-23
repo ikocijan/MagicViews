@@ -4,14 +4,14 @@ MagicViews
 
 Provides a simple way to set custom font in Android application.
 
-![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot.jpg)
+![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot.jpg)![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot_2.jpg)
 
 ## Usage
 
 1) Add the library as a dependency to your ```build.gradle```
 
 ```groovy
-compile 'com.ivankocijan:MagicViews:1.0.0@aar'
+compile 'com.ivankocijan:MagicViews:1.0.2@aar'
 ```
 
 2) Add your application namespace to the root element in the XML
@@ -34,7 +34,12 @@ compile 'com.ivankocijan:MagicViews:1.0.0@aar'
 * Button
 * CheckBox
 * CheckedTextView
-
+* PreferenceGroup
+* Preference
+* CheckboxPreference
+* SwitchPreference
+* EditTextPreference
+* 
 ## Contributing
 
 Feedback and code contributions are very much welcome. Just make a pull request with a short description of your changes. By making contributions to this project you give permission for your code to be used under the same [license](LICENSE).
