@@ -16,4 +16,12 @@
         <attr name="checkBoxTypeface" format="string"/>
     </declare-styleable>
 
+    <declare-styleable name="MagicPreferenceGroup">
+        <attr name="preferenceGroupTypeface" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="MagicEditTextPreference">
+        <attr name="editTextTypeface" format="string"/>
+    </declare-styleable>
+
 </resources>

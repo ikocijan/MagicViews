@@ -19,4 +19,9 @@
         android:summary="Checkbox summary"
         app:checkBoxTypeface="cha_chicle.otf"/>
 
+    <com.ivankocijan.magicviews.preference.MagicEditTextPreference
+        android:title="Edit text title"
+        app:editTextTypeface="cha_chicle.otf"
+        />
+
 </PreferenceScreen>

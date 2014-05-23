@@ -77,7 +77,12 @@ public class FontUtils {
             case CHECKBOX_PREFERENCE:
                 TypedArray checkBox = ctx.obtainStyledAttributes(attrs, R.styleable.MagicCheckBoxPreference);
                 return checkBox.getString(R.styleable.MagicCheckBoxPreference_checkBoxTypeface);
-
+            case PREFERENCE_GROUP:
+                TypedArray prefGroup = ctx.obtainStyledAttributes(attrs, R.styleable.MagicPreferenceGroup);
+                return prefGroup.getString(R.styleable.MagicPreferenceGroup_preferenceGroupTypeface);
+            case EDIT_TEXT_PREFERENCE:
+                TypedArray editText = ctx.obtainStyledAttributes(attrs, R.styleable.MagicEditTextPreference);
+                return editText.getString(R.styleable.MagicEditTextPreference_editTextTypeface);
             default:
                 return "";
         }

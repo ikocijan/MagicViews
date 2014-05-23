@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.preference;
 
 import android.content.Context;
-import android.preference.Preference;
+import android.preference.PreferenceGroup;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
@@ -10,31 +10,27 @@ import com.ivankocijan.magicviews.enums.PreferenceType;
 import com.ivankocijan.magicviews.utils.FontUtils;
 
 /**
- * Created by ivankocijan on 22.05.2014..
+ * Created by ivankocijan on 23.05.2014..
  */
-public class MagicPreference extends Preference {
+public class MagicPreferenceGroup extends PreferenceGroup {
 
     private Context context;
     private String fontStyle;
 
-    public MagicPreference (Context context, AttributeSet attrs, int defStyle) {
+    public MagicPreferenceGroup (Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context, attrs);
     }
 
-    public MagicPreference (Context context, AttributeSet attrs) {
+    public MagicPreferenceGroup (Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
-    }
-
-    public MagicPreference (Context context) {
-        super(context);
     }
 
     private void init (Context ctx, AttributeSet attrs) {
 
         this.context = ctx;
-        fontStyle = FontUtils.getPrefFontStyle(ctx, attrs, PreferenceType.SIMPLE_PREFERENCE);
+        fontStyle = FontUtils.getPrefFontStyle(ctx, attrs, PreferenceType.PREFERENCE_GROUP);
 
     }
 
@@ -50,4 +46,5 @@ public class MagicPreference extends Preference {
         }
 
     }
+
 }
