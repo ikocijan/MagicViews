@@ -28,7 +28,7 @@ compile 'com.ivankocijan:MagicViews:1.0.2@aar'
         app:typeFace="cha_chicle.otf"/>
 ```
 
-## Suported views
+## Supported views
 * TextView
 * EditText
 * Button
@@ -39,6 +39,9 @@ compile 'com.ivankocijan:MagicViews:1.0.2@aar'
 * CheckboxPreference
 * SwitchPreference
 * EditTextPreference
+
+## Supported Android versions
+* 2.3 or higher
 
 ## Contributing
 
