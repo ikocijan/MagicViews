@@ -21,7 +21,7 @@ public final class MagicFont {
     private ArrayList<String> assetFolders;
 
     //key = font name, value = fontPath
-    private static final Hashtable<String, Typeface> fonts = new Hashtable<>();
+    private static final Hashtable<String, Typeface> fonts = new Hashtable<String, Typeface>();
 
     private static Context ctx;
 
@@ -52,7 +52,7 @@ public final class MagicFont {
 
         if (assetFolders == null) {
 
-            assetFolders = new ArrayList<>();
+            assetFolders = new ArrayList<String>();
             assetFolders.add(""); //root folder also needs to be checked
             getAssetFolders("");
 
@@ -98,7 +98,6 @@ public final class MagicFont {
                         fontPath = assetFolder + "/" + typeface;
                     }
 
-
                     Typeface font = Typeface.createFromAsset(am, fontPath);
 
                     fonts.put(typeface, font);
@@ -129,6 +128,7 @@ public final class MagicFont {
     private boolean getAssetFolders (String path) {
 
         String[] list;
+
 
         try {
 
