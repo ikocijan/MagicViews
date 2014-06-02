@@ -2,9 +2,9 @@ MagicViews
 ==========
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.ivankocijan/MagicViews/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.ivankocijan/MagicViews)
 
-Provides a simple way to set custom font in Android application.
+Provides a simple way to set custom font in Android application. But, this is just a beginning. A lot of cool and awesome stuff is coming soon in this library.
 
-![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot.jpg)![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot_2.jpg)
+![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot.jpg)![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshoot_2.png)
 
 ## Usage
 
