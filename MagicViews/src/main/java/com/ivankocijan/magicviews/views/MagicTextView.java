@@ -39,7 +39,6 @@ public class MagicTextView extends TextView {
 
     }
 
-
 }
 
 
