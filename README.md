@@ -11,7 +11,7 @@ Provides a simple way to set custom font in Android application. But, this is ju
 1) Add the library as a dependency to your ```build.gradle```
 
 ```groovy
-compile 'com.ivankocijan:MagicViews:1.0.2@aar'
+compile 'com.ivankocijan:MagicViews:version@aar'
 ```
 
 2) Add your application namespace to the root element in the XML
@@ -28,7 +28,7 @@ compile 'com.ivankocijan:MagicViews:1.0.2@aar'
         app:typeFace="cha_chicle.otf"/>
 ```
 
-## Suported views
+## Supported views
 * TextView
 * EditText
 * Button
@@ -40,7 +40,10 @@ compile 'com.ivankocijan:MagicViews:1.0.2@aar'
 * SwitchPreference
 * EditTextPreference
 
+## Supported Android versions
+* 2.3 or higher
+
 ## Contributing
 
-Feedback and code contributions are very much welcome. Just make a pull request with a short description of your changes. By making contributions to this project you give permission for your code to be used under the same [license](LICENSE).
+Feedback and code contributions are very much welcomed. Just make a pull request with a short description of your changes. By making contributions to this project you give permission for your code to be used under the same [license](LICENSE).
     
