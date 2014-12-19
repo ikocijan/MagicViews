@@ -27,7 +27,7 @@ public class FontUtils {
         String fontStyle = a.getString(R.styleable.MagicFont_typeFace);
 
         if (fontStyle != null) {
-            view.setTypeface(MagicFont.getTypeface(ctx, fontStyle));
+            view.setTypeface(MagicFont.getInstance(ctx).getTypeface(ctx, fontStyle));
         }
 
         a.recycle();
@@ -47,7 +47,7 @@ public class FontUtils {
 
             for (TextView view : views) {
 
-                view.setTypeface(MagicFont.getTypeface(ctx, fontStyle));
+                view.setTypeface(MagicFont.getInstance(ctx).getTypeface(ctx, fontStyle));
 
             }
 

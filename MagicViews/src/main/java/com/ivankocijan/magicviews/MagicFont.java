@@ -3,6 +3,7 @@ package com.ivankocijan.magicviews;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,20 +18,30 @@ public final class MagicFont {
 
     private AssetManager am;
 
+    private String fontFolderPath = null;
+
     //list which contains all asset folders
     private ArrayList<String> assetFolders;
 
     //key = font name, value = fontPath
-    private static final Hashtable<String, Typeface> fonts = new Hashtable<String, Typeface>();
+    private static final Hashtable<String, Typeface> fonts = new Hashtable<>();
 
     private static Context ctx;
 
     private static MagicFont magicFont;
 
-    private static MagicFont getInstance (Context context) {
+    public static MagicFont getInstance (Context context) {
 
         if (magicFont == null) {
-            magicFont = new MagicFont();
+
+            synchronized (MagicFont.class) {
+
+                if (magicFont == null) {
+                    magicFont = new MagicFont();
+                }
+
+            }
+
         }
 
         ctx = context;
@@ -42,11 +53,30 @@ public final class MagicFont {
     }
 
     /**
+     * This method initializes font based on @fontFolderPath
+     *
+     * @param typeface typeface to set
+     */
+    private void initializeFont (String typeface) {
+
+        am = ctx.getResources().getAssets();
+        Log.d("koc", "path: " + (fontFolderPath));
+
+        String fontPath = fontFolderPath + "/" + typeface;
+
+        Typeface font = Typeface.createFromAsset(am, fontPath);
+        fonts.put(typeface, font);
+
+    }
+
+    /**
      * Call this method to initialize app typefaces.
      *
      * @param typefaces typeface name. For example "cha_chicle.otf"
+     * @deprecated use @initializeFont
      */
-    void initTypefaces (String... typefaces) {
+    @Deprecated
+    private void initTypefaces (String... typefaces) {
 
         am = ctx.getResources().getAssets();
 
@@ -64,6 +94,11 @@ public final class MagicFont {
     }
 
 
+    /**
+     * @param typefaces
+     * @deprecated not used anymore
+     */
+    @Deprecated
     private void setUpFonts (String... typefaces) {
 
         for (String typeface : typefaces) {
@@ -78,6 +113,12 @@ public final class MagicFont {
 
     }
 
+    /**
+     * @param typeface
+     * @return true if font is found
+     * @deprecated not used anymore
+     */
+    @Deprecated
     private boolean findFontInAssets (String typeface) {
 
         try {
@@ -152,20 +193,31 @@ public final class MagicFont {
     }
 
     /**
-     * Returns requested typeface. If this class is not initialized it will try to initialaze it and return
+     * Returns requested typeface. If this class is not initialized it will try to initialize it and return
      * requested font
      *
      * @param ctx
      * @param typeface
      * @return
      */
-    public static Typeface getTypeface (Context ctx, String typeface) {
+    public Typeface getTypeface (Context ctx, String typeface) {
+
+        if (fontFolderPath == null || fontFolderPath.isEmpty()) {
+            throw new MagicViewsNotInitializedException("Font folder path is empty. " +
+                    "Have you called MagicViews.setFontFolderPath in your application class?");
+        }
 
         if (!fonts.containsKey(typeface)) {
-            MagicFont.getInstance(ctx).initTypefaces(typeface);
+            MagicFont.getInstance(ctx).initializeFont(typeface);
         }
 
         return fonts.get(typeface);
+
+    }
+
+    public void setFontFolderPath (String path) {
+
+        this.fontFolderPath = path;
 
     }
 
