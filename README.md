@@ -17,7 +17,23 @@ compile 'com.ivankocijan:MagicViews:version@aar'
 2) Add your application namespace to the root element in the XML
     <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> 
 
-3) Add typeface to your assets folder. NOTE You can add your font anywhere in assets folder. Library will automatically find your font. Check TestApp for example.
+3) Specify path to fonts folder in onCreate method of your Application class (See example app). 
+
+```java
+   public class MyApplication extends Application {
+   
+        @Override
+        public void onCreate() {
+            super.onCreate();
+            
+             MagicViews.setFontFolderPath(this, "fontFolderPath");
+        
+        }
+   
+   }
+   
+   ```
+
 
 4) Instead of TextView use <code>com.ivankocijan.magicviews.views.MagicTextView</code>
 
@@ -42,6 +58,13 @@ compile 'com.ivankocijan:MagicViews:version@aar'
 
 ## Supported Android versions
 * 2.3 or higher
+
+## Change log
+
+V2.0.0
+
+* Support for adding font folder path - Going through all assets to find appropriate font was too slow on some phones so as of this version you need to initialize MagicViews by telling the library where fonts will be located. You can do it by calling MagicViews.setFontFolderPath(Context ctx, String fontFolderPath) in onCreate method of your application class. This approach works approximately 70% faster. 
+* Support for Android L - The library no longer clashes with new v7 and v4 libraries
 
 ## Contributing
 
