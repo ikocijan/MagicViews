@@ -31,12 +31,12 @@ signing {
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "20.0.0"
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 21
-        versionCode 6
+        versionCode 7
         versionName "2.0.0"
     }
     buildTypes {
