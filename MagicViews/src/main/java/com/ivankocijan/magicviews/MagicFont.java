@@ -3,7 +3,6 @@ package com.ivankocijan.magicviews;
 import android.content.Context;
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
-import android.util.Log;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -60,9 +59,15 @@ public final class MagicFont {
     private void initializeFont (String typeface) {
 
         am = ctx.getResources().getAssets();
-        Log.d("koc", "path: " + (fontFolderPath));
 
         String fontPath = fontFolderPath + "/" + typeface;
+
+        //Font path can not start with / and it can not contain double slashes
+        fontPath = fontPath.replaceAll("//", "/");
+        if (fontPath.startsWith("/")) {
+            fontPath = fontPath.substring(1, fontPath.length());
+        }
+
 
         Typeface font = Typeface.createFromAsset(am, fontPath);
         fonts.put(typeface, font);
@@ -82,7 +87,7 @@ public final class MagicFont {
 
         if (assetFolders == null) {
 
-            assetFolders = new ArrayList<String>();
+            assetFolders = new ArrayList<>();
             assetFolders.add(""); //root folder also needs to be checked
             getAssetFolders("");
 
