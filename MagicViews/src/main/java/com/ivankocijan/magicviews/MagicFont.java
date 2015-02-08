@@ -23,32 +23,35 @@ public final class MagicFont {
     private ArrayList<String> assetFolders;
 
     //key = font name, value = fontPath
-    private static final Hashtable<String, Typeface> fonts = new Hashtable<>();
+    private final Hashtable<String, Typeface> fonts = new Hashtable<>();
 
-    private static Context ctx;
+    private Context ctx;
 
     private static MagicFont magicFont;
 
-    public static MagicFont getInstance (Context context) {
+    public MagicFont(Context context) {
+        this.ctx = context;
+    }
+
+    public static MagicFont getInstance(Context context) {
 
         if (magicFont == null) {
 
             synchronized (MagicFont.class) {
 
                 if (magicFont == null) {
-                    magicFont = new MagicFont();
+                    magicFont = new MagicFont(context);
                 }
 
             }
 
         }
 
-        ctx = context;
         return magicFont;
 
     }
 
-    private MagicFont () {
+    private MagicFont() {
     }
 
     /**
@@ -56,7 +59,7 @@ public final class MagicFont {
      *
      * @param typeface typeface to set
      */
-    private void initializeFont (String typeface) {
+    private void initializeFont(String typeface) {
 
         am = ctx.getResources().getAssets();
 
@@ -67,7 +70,6 @@ public final class MagicFont {
         if (fontPath.startsWith("/")) {
             fontPath = fontPath.substring(1, fontPath.length());
         }
-
 
         Typeface font = Typeface.createFromAsset(am, fontPath);
         fonts.put(typeface, font);
@@ -81,7 +83,7 @@ public final class MagicFont {
      * @deprecated use @initializeFont
      */
     @Deprecated
-    private void initTypefaces (String... typefaces) {
+    private void initTypefaces(String... typefaces) {
 
         am = ctx.getResources().getAssets();
 
@@ -93,18 +95,16 @@ public final class MagicFont {
 
         }
 
-
         setUpFonts(typefaces);
 
     }
 
 
     /**
-     * @param typefaces
      * @deprecated not used anymore
      */
     @Deprecated
-    private void setUpFonts (String... typefaces) {
+    private void setUpFonts(String... typefaces) {
 
         for (String typeface : typefaces) {
 
@@ -119,12 +119,11 @@ public final class MagicFont {
     }
 
     /**
-     * @param typeface
      * @return true if font is found
      * @deprecated not used anymore
      */
     @Deprecated
-    private boolean findFontInAssets (String typeface) {
+    private boolean findFontInAssets(String typeface) {
 
         try {
 
@@ -167,14 +166,10 @@ public final class MagicFont {
 
     /**
      * This method goes through all assets folders and adds them to @assetFolders object
-     *
-     * @param path
-     * @return
      */
-    private boolean getAssetFolders (String path) {
+    private boolean getAssetFolders(String path) {
 
         String[] list;
-
 
         try {
 
@@ -185,8 +180,9 @@ public final class MagicFont {
                 // This is a folder
                 for (String file : list) {
                     assetFolders.add(file);
-                    if (!getAssetFolders(path + "/" + file))
+                    if (!getAssetFolders(path + "/" + file)) {
                         return false;
+                    }
                 }
             }
 
@@ -200,12 +196,8 @@ public final class MagicFont {
     /**
      * Returns requested typeface. If this class is not initialized it will try to initialize it and return
      * requested font
-     *
-     * @param ctx
-     * @param typeface
-     * @return
      */
-    public Typeface getTypeface (Context ctx, String typeface) {
+    public Typeface getTypeface(Context ctx, String typeface) {
 
         if (fontFolderPath == null || fontFolderPath.isEmpty()) {
             throw new MagicViewsNotInitializedException("Font folder path is empty. " +
@@ -220,7 +212,7 @@ public final class MagicFont {
 
     }
 
-    public void setFontFolderPath (String path) {
+    public void setFontFolderPath(String path) {
 
         this.fontFolderPath = path;
 
