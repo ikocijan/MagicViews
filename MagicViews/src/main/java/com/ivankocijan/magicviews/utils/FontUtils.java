@@ -1,13 +1,13 @@
 package com.ivankocijan.magicviews.utils;
 
+import com.ivankocijan.magicviews.MagicFont;
+import com.ivankocijan.magicviews.R;
+import com.ivankocijan.magicviews.enums.PreferenceType;
+
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-
-import com.ivankocijan.magicviews.MagicFont;
-import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.enums.PreferenceType;
 
 /**
  * Created by ivankocijan on 18.05.2014..
@@ -16,32 +16,28 @@ public class FontUtils {
 
     /**
      * Set's typface on view
-     *
-     * @param ctx
-     * @param attrs
-     * @param view
      */
-    public static void setTypeface (Context ctx, AttributeSet attrs, TextView view) {
+    public static void setTypeface(Context ctx, AttributeSet attrs, TextView view) {
 
-        TypedArray a = ctx.obtainStyledAttributes(attrs, R.styleable.MagicFont);
-        String fontStyle = a.getString(R.styleable.MagicFont_typeFace);
+        if (attrs != null && ctx != null && view != null) {
 
-        if (fontStyle != null) {
-            view.setTypeface(MagicFont.getInstance(ctx).getTypeface(ctx, fontStyle));
+            TypedArray a = ctx.obtainStyledAttributes(attrs, R.styleable.MagicFont);
+            String fontStyle = a.getString(R.styleable.MagicFont_typeFace);
+
+            if (fontStyle != null) {
+                view.setTypeface(MagicFont.getInstance(ctx).getTypeface(ctx, fontStyle));
+            }
+
+            a.recycle();
+
         }
-
-        a.recycle();
 
     }
 
     /**
      * Set's font style for custom preference
-     *
-     * @param ctx
-     * @param fontStyle
-     * @param views
      */
-    public static void setPreferenceTypeface (Context ctx, String fontStyle, TextView... views) {
+    public static void setPreferenceTypeface(Context ctx, String fontStyle, TextView... views) {
 
         if (fontStyle != null) {
 
@@ -57,12 +53,8 @@ public class FontUtils {
 
     /**
      * Returns font style from attribute set
-     *
-     * @param ctx
-     * @param attrs
-     * @return
      */
-    public static String getPrefFontStyle (Context ctx, AttributeSet attrs, PreferenceType type) {
+    public static String getPrefFontStyle(Context ctx, AttributeSet attrs, PreferenceType type) {
 
         switch (type) {
             case SIMPLE_PREFERENCE:
