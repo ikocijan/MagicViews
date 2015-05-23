@@ -67,6 +67,14 @@
                 android:text="@string/radio_button"
                 app:typeFace="gentius.otf"/>
 
+        <com.ivankocijan.magicviews.views.MagicAutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/autocomplete_text_view"
+                app:typeFace="gentius.otf"/>
+
 
     </LinearLayout>
 

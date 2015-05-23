@@ -10,5 +10,6 @@
     <string name="check_box">Check box</string>
     <string name="checked_text_view">Checked text view</string>
     <string name="radio_button">Radio button</string>
+    <string name="autocomplete_text_view">Autocomplete</string>
 
 </resources>
