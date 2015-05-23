@@ -3,22 +3,31 @@
           package="com.ivankocijan.TestApp">
 
     <application
-        android:name="com.ivankocijan.TestApp.TestAppApplication"
-        android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme">
+            android:name=".TestAppApplication"
+            android:allowBackup="true"
+            android:icon="@drawable/ic_launcher"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
         <activity
-            android:name=".activites.MainActivity"
-            android:label="@string/app_name">
+                android:name=".activites.MainActivity"
+                android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activites.PreferenceExampleActivity"/>
-
+        <activity android:name=".activites.PreferenceExampleActivity"
+                  android:screenOrientation="portrait"
+                />
+        <activity
+                android:name=".activites.LayoutExampleActivity"
+                android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".activites.CodeExampleActivity"
+                android:screenOrientation="portrait">
+        </activity>
     </application>
 
 </manifest>

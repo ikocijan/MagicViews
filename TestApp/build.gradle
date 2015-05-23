@@ -5,10 +5,10 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 22
-        versionCode 5
-        versionName "2.0"
+        versionCode 6
+        versionName "3.0"
     }
     buildTypes {
         release {
@@ -25,7 +25,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.1.1'
     compile 'com.jakewharton:butterknife:5.1.0'
     compile project(':MagicViews')
-
 
     //compile 'com.ivankocijan:MagicViews:1.0.4@aar'
 

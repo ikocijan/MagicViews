@@ -4,7 +4,7 @@
     <string name="app_name">FontLibrary</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="preference_example">Preference example</string>
+    <string name="preference_example">Preference</string>
     <string name="text_view">Text view</string>
     <string name="edit_text">Edit text</string>
     <string name="check_box">Check box</string>
@@ -12,5 +12,10 @@
     <string name="radio_button">Radio button</string>
     <string name="autocomplete_text_view">Autocomplete</string>
     <string name="multi_autocomplete">Multi autocomplete</string>
+    <string name="layout_example">From layout</string>
+    <string name="code_example">From code</string>
+    <string name="title_activity_layout_activity_example">LayoutActivityExample</string>
+    <string name="button">Button</string>
+    <string name="title_activity_code_example">CodeExampleActivity</string>
 
 </resources>

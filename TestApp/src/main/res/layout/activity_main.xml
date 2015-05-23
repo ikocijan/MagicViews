@@ -22,67 +22,26 @@
                 android:textSize="@dimen/text_size"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:typeFace="cha_chicle.otf"/>
+                app:typeFace="open_sans_semi_bold.ttf"/>
 
 
-        <com.ivankocijan.magicviews.views.MagicTextView
-                android:text="@string/text_view"
+        <com.ivankocijan.magicviews.views.MagicButton
+                android:text="@string/layout_example"
+                android:id="@+id/layout_example"
                 android:padding="@dimen/padding"
                 android:textSize="@dimen/text_size"
-                android:layout_width="wrap_content"
-                app:typeFace="galderglynn_esq_bk.otf"
-                android:layout_height="wrap_content"/>
-
-
-        <com.ivankocijan.magicviews.views.MagicEditText
-                android:hint="@string/edit_text"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:layout_width="wrap_content"
-                app:typeFace="unvoll.ttf"
-                android:layout_height="wrap_content"/>
-
-        <com.ivankocijan.magicviews.views.MagicCheckBox
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:text="@string/check_box"
-                app:typeFace="cha_chicle.otf"/>
-
-        <com.ivankocijan.magicviews.views.MagicCheckedTextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                app:typeFace="open_sans_semi_bold.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicButton
+                android:text="@string/code_example"
+                android:id="@+id/code_example"
                 android:padding="@dimen/padding"
                 android:textSize="@dimen/text_size"
-                android:text="@string/checked_text_view"
-                app:typeFace="gentius.otf"/>
-
-
-        <com.ivankocijan.magicviews.views.MagicRadioButton
+                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:text="@string/radio_button"
-                app:typeFace="gentius.otf"/>
-
-        <com.ivankocijan.magicviews.views.MagicAutoCompleteTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:text="@string/autocomplete_text_view"
-                app:typeFace="gentius.otf"/>
-
-        <com.ivankocijan.magicviews.views.MagicMultiAutoCompleteTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:text="@string/multi_autocomplete"
-                app:typeFace="gentius.otf"/>
-
+                app:typeFace="open_sans_semi_bold.ttf"/>
 
     </LinearLayout>
 
