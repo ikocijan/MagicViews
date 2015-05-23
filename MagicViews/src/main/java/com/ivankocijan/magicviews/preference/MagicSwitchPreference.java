@@ -3,7 +3,9 @@ package com.ivankocijan.magicviews.preference;
 import com.ivankocijan.magicviews.enums.PreferenceType;
 import com.ivankocijan.magicviews.utils.FontUtils;
 
+import android.annotation.TargetApi;
 import android.content.Context;
+import android.os.Build;
 import android.preference.SwitchPreference;
 import android.util.AttributeSet;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.TextView;
 /**
  * Created by ivankocijan on 22.05.2014..
  */
+@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MagicSwitchPreference extends SwitchPreference {
 
     private String fontStyle;
@@ -25,6 +28,7 @@ public class MagicSwitchPreference extends SwitchPreference {
         this(context, attrs, 0);
     }
 
+    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
     public MagicSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(context, attrs);
