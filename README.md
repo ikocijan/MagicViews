@@ -47,7 +47,7 @@ compile 'com.ivankocijan:MagicViews:version@aar'
 
 ## Usage from code
 
-1) Create new instance of MagicTextView and call method setFont(String fontName)
+1) Create new instance of MagicTextView and call **setFont(String fontName)** method
 
 ```java
     MagicTextView magicTextView = new MagicTextView(this);
