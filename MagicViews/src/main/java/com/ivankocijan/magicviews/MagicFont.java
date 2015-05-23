@@ -201,7 +201,7 @@ public final class MagicFont {
 
         if (fontFolderPath == null || fontFolderPath.isEmpty()) {
             throw new MagicViewsNotInitializedException("Font folder path is empty. " +
-                    "Have you called MagicViews.setFontFolderPath in your application class?");
+                    "Please call MagicViews.setFontFolderPath from your application class.");
         }
 
         if (!fonts.containsKey(typeface)) {
