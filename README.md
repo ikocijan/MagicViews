@@ -31,10 +31,6 @@ compile 'com.ivankocijan:MagicViews:version@aar'
    
    ```
 
-## Usage
-
-You can add fonts from your xml files or from code.
-
 ## Usage from layout
 
 1) Add your application namespace to the root element in the XML
