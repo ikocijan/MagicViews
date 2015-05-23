@@ -6,7 +6,7 @@ Provides a simple way to set custom font in Android application. But, this is ju
 
 ![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshot.jpg)![Screenshots](https://raw.github.com/ikocijan/MagicViews/master/screenshoot_2.png)
 
-## Usage
+## Adding to your project
 
 1) Add the library as a dependency to your ```build.gradle```
 
@@ -14,10 +14,7 @@ Provides a simple way to set custom font in Android application. But, this is ju
 compile 'com.ivankocijan:MagicViews:version@aar'
 ```
 
-2) Add your application namespace to the root element in the XML
-    <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> 
-
-3) Specify path to fonts folder in onCreate method of your Application class (See example app). 
+2) Specify path to fonts folder in onCreate method of your Application class (See example app). 
 
 ```java
    public class MyApplication extends Application {
@@ -34,8 +31,16 @@ compile 'com.ivankocijan:MagicViews:version@aar'
    
    ```
 
+## Usage
 
-4) Instead of TextView use <code>com.ivankocijan.magicviews.views.MagicTextView</code>
+You can add fonts from your xml files or from code.
+
+## Usage from layout
+
+1) Add your application namespace to the root element in the XML
+    <code>xmlns:app="http://schemas.android.com/apk/res-auto"</code> 
+
+2) Instead of TextView use <code>com.ivankocijan.magicviews.views.MagicTextView</code>
 
 ```xml
     <com.ivankocijan.magicviews.views.MagicTextView
@@ -44,12 +49,26 @@ compile 'com.ivankocijan:MagicViews:version@aar'
         app:typeFace="cha_chicle.otf"/>
 ```
 
+## Usage from code
+
+1) Create new instance of MagicTextView and call method setFont(String fontName)
+
+```java
+    MagicTextView magicTextView = new MagicTextView(this);
+    magicTextView.setText("TextView");
+    magicTextView.setFont("open_sans_semi_bold.ttf");
+    
+```
+
 ## Supported views
 * TextView
 * EditText
 * Button
 * CheckBox
 * CheckedTextView
+* RadioButton
+* AutoCompleteTextView
+* MultiAutoCompleteTextView
 * PreferenceGroup
 * Preference
 * CheckboxPreference
@@ -60,6 +79,14 @@ compile 'com.ivankocijan:MagicViews:version@aar'
 * 2.3 or higher
 
 ## Change log
+
+V3.0
+
+* Library now uses new AppCompat views which backport some cool stuff to pre-lollipop devices. See [Android developer blogspot](http://android-developers.blogspot.com/2015/04/android-support-library-221.html) for more info
+* Added new views: RadioButton, AutoCompleteTextView and MultiAutoCompleteTextView
+* Font can now be set from code by calling setFont(String fontName) method
+* Example app is updated with new features
+* Bugfixes
 
 V2.0.1
 
