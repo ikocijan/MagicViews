@@ -1,0 +1,88 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.ivankocijan.TestApp.activites.MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:paddingBottom="@dimen/activity_vertical_margin">
+
+        <com.ivankocijan.magicviews.views.MagicButton
+                android:text="@string/button"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                app:typeFace="open_sans_regular.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:text="@string/text_view"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:layout_width="wrap_content"
+                app:typeFace="open_sans_regular.ttf"
+                android:layout_height="wrap_content"/>
+
+
+        <com.ivankocijan.magicviews.views.MagicEditText
+                android:hint="@string/edit_text"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:layout_width="wrap_content"
+                app:typeFace="open_sans_regular.ttf"
+                android:layout_height="wrap_content"/>
+
+        <com.ivankocijan.magicviews.views.MagicCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/check_box"
+                app:typeFace="open_sans_regular.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicCheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/checked_text_view"
+                app:typeFace="open_sans_regular.ttf"/>
+
+
+        <com.ivankocijan.magicviews.views.MagicRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/radio_button"
+                app:typeFace="open_sans_regular.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicAutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/autocomplete_text_view"
+                app:typeFace="open_sans_regular.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicMultiAutoCompleteTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/multi_autocomplete"
+                app:typeFace="open_sans_regular.ttf"/>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
