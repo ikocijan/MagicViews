@@ -5,13 +5,13 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:1.0.0'
+        classpath 'com.android.tools.build:gradle:1.1.0'
     }
 }
 
 apply plugin: 'maven'
 apply plugin: 'signing'
-version = "2.0.1"
+version = "2.0.2"
 group = "com.ivankocijan"
 
 repositories {
@@ -30,14 +30,14 @@ signing {
 }
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 22
+    buildToolsVersion "21.1.2"
 
     defaultConfig {
         minSdkVersion 9
-        targetSdkVersion 21
-        versionCode 8
-        versionName "2.0.1"
+        targetSdkVersion 22
+        versionCode 9
+        versionName "2.0.2"
     }
     buildTypes {
         release {

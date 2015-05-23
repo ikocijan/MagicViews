@@ -12,49 +12,49 @@
               tools:context="com.ivankocijan.TestApp.activites.MainActivity">
 
     <com.ivankocijan.magicviews.views.MagicButton
-        android:text="Preference example"
-        android:id="@+id/preference_example"
-        android:padding="@dimen/padding"
-        android:textSize="@dimen/text_size"
-        android:layout_width="wrap_content"
-        app:typeFace="cha_chicle.otf"
-        android:layout_height="wrap_content"/>
+            android:text="Preference example"
+            android:id="@+id/preference_example"
+            android:padding="@dimen/padding"
+            android:textSize="@dimen/text_size"
+            android:layout_width="wrap_content"
+            app:typeFace="cha_chicle.otf"
+            android:layout_height="wrap_content"/>
 
     <com.ivankocijan.magicviews.views.MagicTextView
-        android:text="Font 2"
-        android:padding="@dimen/padding"
-        android:textSize="@dimen/text_size"
-        android:layout_width="wrap_content"
-        app:typeFace="galderglynn_esq_bk.otf"
-        android:layout_height="wrap_content"/>
+            android:text="Font 2"
+            android:padding="@dimen/padding"
+            android:textSize="@dimen/text_size"
+            android:layout_width="wrap_content"
+            app:typeFace="galderglynn_esq_bk.otf"
+            android:layout_height="wrap_content"/>
 
     <com.ivankocijan.magicviews.views.MagicTextView
-        android:text="Font 3"
-        android:padding="@dimen/padding"
-        android:textSize="@dimen/text_size"
-        android:layout_width="wrap_content"
-        app:typeFace="gentius.otf"
-        android:layout_height="wrap_content"/>
+            android:text="Font 3"
+            android:padding="@dimen/padding"
+            android:textSize="@dimen/text_size"
+            android:layout_width="wrap_content"
+            app:typeFace="gentius.otf"
+            android:layout_height="wrap_content"/>
 
     <com.ivankocijan.magicviews.views.MagicEditText
-        android:text="Font 4"
-        android:padding="@dimen/padding"
-        android:textSize="@dimen/text_size"
-        android:layout_width="wrap_content"
-        app:typeFace="unvoll.ttf"
-        android:layout_height="wrap_content"/>
+            android:text="Font 4"
+            android:padding="@dimen/padding"
+            android:textSize="@dimen/text_size"
+            android:layout_width="wrap_content"
+            app:typeFace="unvoll.ttf"
+            android:layout_height="wrap_content"/>
 
     <com.ivankocijan.magicviews.views.MagicCheckBox
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Some text"
-        app:typeFace="cha_chicle.otf"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Some text"
+            app:typeFace="cha_chicle.otf"/>
 
     <com.ivankocijan.magicviews.views.MagicCheckedTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Something"
-        app:typeFace="gentius.otf"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Something"
+            app:typeFace="gentius.otf"/>
 
-
+    
 </LinearLayout>
