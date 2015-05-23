@@ -1,6 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
+import com.ivankocijan.magicviews.interfaces.MagicView;
 import com.ivankocijan.magicviews.utils.FontUtils;
 
 import android.content.Context;
@@ -12,7 +13,7 @@ import android.util.AttributeSet;
  *         ivan.kocijan@infinum.hr
  * @since 23.05.15.
  */
-public class MagicRadioButton extends AppCompatRadioButton {
+public class MagicRadioButton extends AppCompatRadioButton implements MagicView {
 
     public MagicRadioButton(Context context) {
         this(context, null);
@@ -31,5 +32,10 @@ public class MagicRadioButton extends AppCompatRadioButton {
 
         FontUtils.setTypeface(getContext(), attrs, this);
 
+    }
+
+    @Override
+    public void setFont(String fontName) {
+        FontUtils.setTypeface(getContext(), fontName, this);
     }
 }

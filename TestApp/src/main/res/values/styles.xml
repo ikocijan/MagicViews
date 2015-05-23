@@ -5,4 +5,10 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Text">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:padding">@dimen/padding</item>
+    </style>
+
 </resources>

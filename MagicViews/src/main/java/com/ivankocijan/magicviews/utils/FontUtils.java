@@ -3,9 +3,12 @@ package com.ivankocijan.magicviews.utils;
 import com.ivankocijan.magicviews.MagicFont;
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.enums.PreferenceType;
+import com.ivankocijan.magicviews.exceptions.FontNameEmptyException;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.annotation.NonNull;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -15,7 +18,7 @@ import android.widget.TextView;
 public class FontUtils {
 
     /**
-     * Set's typface on view
+     * Set's typeface on view
      */
     public static void setTypeface(Context ctx, AttributeSet attrs, TextView view) {
 
@@ -30,6 +33,19 @@ public class FontUtils {
 
             a.recycle();
 
+        }
+
+    }
+
+    public static void setTypeface(Context ctx, @NonNull String fontName, TextView view) {
+
+        if (TextUtils.isEmpty(fontName)) {
+            throw new FontNameEmptyException(
+                    "In order to set the typeface fontName param can not be empty");
+        }
+
+        if (ctx != null && view != null) {
+            view.setTypeface(MagicFont.getInstance(ctx).getTypeface(ctx, fontName));
         }
 
     }
