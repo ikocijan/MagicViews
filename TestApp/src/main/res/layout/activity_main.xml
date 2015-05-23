@@ -20,16 +20,10 @@
                 android:id="@+id/preference_example"
                 android:padding="@dimen/padding"
                 android:textSize="@dimen/text_size"
+                android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
-                app:typeFace="cha_chicle.otf"
-                android:layout_height="wrap_content"/>
+                app:typeFace="cha_chicle.otf"/>
 
-        <android.support.v7.widget.AppCompatButton
-                android:text="@string/preference_example"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
     <com.ivankocijan.magicviews.views.MagicTextView
             android:text="@string/text_view"
