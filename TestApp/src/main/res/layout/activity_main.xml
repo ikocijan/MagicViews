@@ -59,7 +59,16 @@
             app:typeFace="gentius.otf"/>
 
 
-</LinearLayout>
+        <com.ivankocijan.magicviews.views.MagicRadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding"
+                android:textSize="@dimen/text_size"
+                android:text="@string/radio_button"
+                app:typeFace="gentius.otf"/>
+
+
+    </LinearLayout>
 
 
         </ScrollView>

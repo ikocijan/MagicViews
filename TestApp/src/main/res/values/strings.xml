@@ -9,5 +9,6 @@
     <string name="edit_text">Edit text</string>
     <string name="check_box">Check box</string>
     <string name="checked_text_view">Checked text view</string>
+    <string name="radio_button">Radio button</string>
 
 </resources>
