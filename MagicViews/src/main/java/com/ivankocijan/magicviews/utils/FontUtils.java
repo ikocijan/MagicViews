@@ -56,28 +56,48 @@ public class FontUtils {
      */
     public static String getPrefFontStyle(Context ctx, AttributeSet attrs, PreferenceType type) {
 
+        String fontStyle = "";
+
+        if (attrs == null) {
+            return fontStyle;
+        }
+
         switch (type) {
             case SIMPLE_PREFERENCE:
                 TypedArray simple = ctx.obtainStyledAttributes(attrs, R.styleable.MagicPreference);
-                return simple.getString(R.styleable.MagicPreference_prefTypeface);
+                fontStyle = simple.getString(R.styleable.MagicPreference_prefTypeface);
+                simple.recycle();
+                break;
 
             case SWITCH_PREFERENCE:
-
                 TypedArray switchPref = ctx.obtainStyledAttributes(attrs, R.styleable.MagicSwitchPreference);
-                return switchPref.getString(R.styleable.MagicSwitchPreference_switchPrefTypeface);
+                fontStyle = switchPref.getString(R.styleable.MagicSwitchPreference_switchPrefTypeface);
+                switchPref.recycle();
+                break;
 
             case CHECKBOX_PREFERENCE:
                 TypedArray checkBox = ctx.obtainStyledAttributes(attrs, R.styleable.MagicCheckBoxPreference);
-                return checkBox.getString(R.styleable.MagicCheckBoxPreference_checkBoxTypeface);
+                fontStyle = checkBox.getString(R.styleable.MagicCheckBoxPreference_checkBoxTypeface);
+                checkBox.recycle();
+                break;
+
             case PREFERENCE_GROUP:
                 TypedArray prefGroup = ctx.obtainStyledAttributes(attrs, R.styleable.MagicPreferenceGroup);
-                return prefGroup.getString(R.styleable.MagicPreferenceGroup_preferenceGroupTypeface);
+                fontStyle = prefGroup.getString(R.styleable.MagicPreferenceGroup_preferenceGroupTypeface);
+                prefGroup.recycle();
+                break;
+
             case EDIT_TEXT_PREFERENCE:
                 TypedArray editText = ctx.obtainStyledAttributes(attrs, R.styleable.MagicEditTextPreference);
-                return editText.getString(R.styleable.MagicEditTextPreference_editTextTypeface);
+                fontStyle = editText.getString(R.styleable.MagicEditTextPreference_editTextTypeface);
+                editText.recycle();
+                return fontStyle;
+
             default:
-                return "";
+                return fontStyle;
         }
+
+        return fontStyle;
 
     }
 
