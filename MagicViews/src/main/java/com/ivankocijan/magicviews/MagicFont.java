@@ -29,7 +29,7 @@ public final class MagicFont {
 
     private Context ctx;
 
-    private static MagicFont magicFont;
+    private volatile static MagicFont magicFont;
 
     public MagicFont(Context context) {
         this.ctx = context;

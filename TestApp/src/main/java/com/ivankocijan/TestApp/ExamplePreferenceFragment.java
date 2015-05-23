@@ -8,7 +8,7 @@ import android.preference.PreferenceFragment;
  */
 public class ExamplePreferenceFragment extends PreferenceFragment {
 
-    private static ExamplePreferenceFragment preferenceFragment;
+    private volatile static ExamplePreferenceFragment preferenceFragment;
 
     public static ExamplePreferenceFragment getInstance () {
 
