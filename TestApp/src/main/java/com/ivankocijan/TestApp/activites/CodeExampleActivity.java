@@ -1,6 +1,13 @@
 package com.ivankocijan.TestApp.activites;
 
 import com.ivankocijan.TestApp.R;
+import com.ivankocijan.magicviews.views.MagicAutoCompleteTextView;
+import com.ivankocijan.magicviews.views.MagicButton;
+import com.ivankocijan.magicviews.views.MagicCheckBox;
+import com.ivankocijan.magicviews.views.MagicCheckedTextView;
+import com.ivankocijan.magicviews.views.MagicEditText;
+import com.ivankocijan.magicviews.views.MagicMultiAutoCompleteTextView;
+import com.ivankocijan.magicviews.views.MagicRadioButton;
 import com.ivankocijan.magicviews.views.MagicTextView;
 
 import android.app.Activity;
@@ -26,26 +33,53 @@ public class CodeExampleActivity extends Activity {
     private void addViews() {
 
         MagicTextView magicTextView = new MagicTextView(this);
-        magicTextView.setLayoutParams(
-                new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+        magicTextView.setTextAppearance(this, R.style.Text);
         magicTextView.setText("TextView");
-        magicTextView.setFont("open_sans_regular.ttf");
-
-        MagicTextView magicTextView2 = new MagicTextView(this);
-        magicTextView.setLayoutParams(
-                new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-
-        magicTextView.setText("TextView2");
         magicTextView.setFont("open_sans_semi_bold.ttf");
 
-        MagicTextView magicTextView3 = new MagicTextView(this);
-        magicTextView.setLayoutParams(
-                new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
-        magicTextView.setText("TextView3");
+        MagicEditText magicEditText = new MagicEditText(this);
+        magicEditText.setTextAppearance(this, R.style.Text);
+        magicEditText.setHint("Edit text");
+        magicEditText.setFont("open_sans_semi_bold.ttf");
+
+        MagicButton magicButton = new MagicButton(this);
+        magicButton.setTextAppearance(this, R.style.Text);
+        magicButton.setText("Button");
+        magicButton.setFont("open_sans_semi_bold.ttf");
+
+        MagicCheckBox magicCheckBox = new MagicCheckBox(this);
+        magicCheckBox.setTextAppearance(this, R.style.Text);
+        magicCheckBox.setText("Checkbox");
+        magicCheckBox.setFont("open_sans_semi_bold.ttf");
+
+        MagicCheckedTextView magicCheckedTextView = new MagicCheckedTextView(this);
+        magicCheckedTextView.setTextAppearance(this, R.style.Text);
+        magicCheckedTextView.setText("Checked text view");
+        magicCheckedTextView.setFont("open_sans_semi_bold.ttf");
+
+        MagicRadioButton magicRadioButton = new MagicRadioButton(this);
+        magicRadioButton.setTextAppearance(this, R.style.Text);
+        magicRadioButton.setText("Radio button");
+        magicRadioButton.setFont("open_sans_semi_bold.ttf");
+
+        MagicAutoCompleteTextView magicAutoCompleteTextView = new MagicAutoCompleteTextView(this);
+        magicAutoCompleteTextView.setTextAppearance(this, R.style.Text);
+        magicAutoCompleteTextView.setText("Autocomplete");
+        magicAutoCompleteTextView.setFont("open_sans_semi_bold.ttf");
+
+        MagicMultiAutoCompleteTextView magicMultiAutoCompleteTextView = new MagicMultiAutoCompleteTextView(this);
+        magicMultiAutoCompleteTextView.setTextAppearance(this, R.style.Text);
+        magicMultiAutoCompleteTextView.setText("Multi autocomplete");
+        magicMultiAutoCompleteTextView.setFont("open_sans_semi_bold.ttf");
 
         wrapper.addView(magicTextView);
-        wrapper.addView(magicTextView2);
-        wrapper.addView(magicTextView3);
+        wrapper.addView(magicEditText);
+        wrapper.addView(magicButton);
+        wrapper.addView(magicCheckBox);
+        wrapper.addView(magicCheckedTextView);
+        wrapper.addView(magicRadioButton);
+        wrapper.addView(magicAutoCompleteTextView);
+        wrapper.addView(magicMultiAutoCompleteTextView);
 
 
     }

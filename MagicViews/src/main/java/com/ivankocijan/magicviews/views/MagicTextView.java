@@ -24,20 +24,20 @@ public class MagicTextView extends AppCompatTextView implements MagicView {
         super(context, attrs, defStyle);
 
         if (!isInEditMode()) {
-            init(context, attrs);
+            init(attrs);
         }
     }
 
 
-    private void init(Context ctx, AttributeSet attrs) {
+    private void init(AttributeSet attrs) {
 
-        FontUtils.setTypeface(ctx, attrs, this);
+        FontUtils.setTypeface(getContext(), attrs, this);
 
     }
 
     @Override
     public void setFont(String fontName) {
-
+        FontUtils.setTypeface(getContext(), fontName, this);
     }
 }
 

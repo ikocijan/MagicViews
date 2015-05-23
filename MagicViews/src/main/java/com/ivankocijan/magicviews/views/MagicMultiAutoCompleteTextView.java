@@ -1,6 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
+import com.ivankocijan.magicviews.interfaces.MagicView;
 import com.ivankocijan.magicviews.utils.FontUtils;
 
 import android.content.Context;
@@ -12,7 +13,7 @@ import android.util.AttributeSet;
  *         ivan.kocijan@infinum.hr
  * @since 23.05.15.
  */
-public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView {
+public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView implements MagicView {
 
     public MagicMultiAutoCompleteTextView(Context context) {
         this(context, null);
@@ -30,6 +31,12 @@ public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTe
     private void init(AttributeSet attrs) {
 
         FontUtils.setTypeface(getContext(), attrs, this);
+
+    }
+
+    @Override
+    public void setFont(String fontName) {
+        FontUtils.setTypeface(getContext(), fontName, this);
 
     }
 
