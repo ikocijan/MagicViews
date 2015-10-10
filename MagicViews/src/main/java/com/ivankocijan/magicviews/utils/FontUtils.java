@@ -19,7 +19,9 @@ public class FontUtils {
 
     /**
      * Set's typeface on view
+     * @Deprecated use AttrsUtils.setAttributes(Context ctx, AttributeSet attrs, TextView view)
      */
+    @Deprecated
     public static void setTypeface(Context ctx, AttributeSet attrs, TextView view) {
 
         if (attrs != null && ctx != null && view != null) {
