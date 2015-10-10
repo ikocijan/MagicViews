@@ -12,6 +12,7 @@ import android.util.AttributeSet;
  */
 public class MagicTextView extends AppCompatTextView implements MagicView {
 
+
     public MagicTextView(Context context) {
         this(context, null);
     }
@@ -30,15 +31,16 @@ public class MagicTextView extends AppCompatTextView implements MagicView {
 
 
     private void init(AttributeSet attrs) {
-
-        FontUtils.setTypeface(getContext(), attrs, this);
-
+        AttrsUtils.setAttributes(getContext(), attrs, this);
     }
+
 
     @Override
     public void setFont(String fontName) {
         FontUtils.setTypeface(getContext(), fontName, this);
     }
+
+
 }
 
 

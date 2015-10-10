@@ -30,7 +30,7 @@ public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTe
 
     private void init(AttributeSet attrs) {
 
-        FontUtils.setTypeface(getContext(), attrs, this);
+        AttrsUtils.setAttributes(getContext(), attrs, this);
 
     }
 

@@ -31,7 +31,7 @@ public class MagicEditText extends AppCompatEditText implements MagicView {
 
     private void init(AttributeSet attrs) {
 
-        FontUtils.setTypeface(getContext(), attrs, this);
+        AttrsUtils.setAttributes(getContext(), attrs, this);
 
     }
 
