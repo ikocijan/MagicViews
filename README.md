@@ -84,15 +84,6 @@ V3.0
 * Example app is updated with new features
 * Bugfixes
 
-V2.0.1
-
-* Removed static reference to context in MagicFont.java
-
-V2.0.0
-
-* Support for adding font folder path - Going through all assets to find appropriate font was too slow on some phones so as of this version you need to initialize MagicViews by telling the library where fonts will be located. You can do it by calling MagicViews.setFontFolderPath(Context ctx, String fontFolderPath) in onCreate method of your application class. This approach works approximately 70% faster. 
-* Support for Android L - The library no longer clashes with new v7 and v4 libraries
-
 ## Contributing
 
 Feedback and code contributions are very much welcomed. Just make a pull request with a short description of your changes. By making contributions to this project you give permission for your code to be used under the same [license](LICENSE).
