@@ -45,16 +45,7 @@ compile 'com.ivankocijan:MagicViews:version@aar'
         app:typeFace="cha_chicle.otf"/>
 ```
 
-## Usage from code
-
-1) Create new instance of MagicTextView and call **setFont(String fontName)** method
-
-```java
-    MagicTextView magicTextView = new MagicTextView(this);
-    magicTextView.setText("TextView");
-    magicTextView.setFont("open_sans_semi_bold.ttf");
-    
-```
+For a complete list of features and how to use them see [wiki page](https://github.com/ikocijan/MagicViews/wiki).
 
 ## Supported views
 * TextView
