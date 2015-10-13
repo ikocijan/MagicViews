@@ -72,6 +72,8 @@ V3.0.1
 * New letter spacing attribute which lets you add horizonatal spacing between characters
 * TabLayout support - you can now set custom font on TabLayout
 
+See [wiki](https://github.com/ikocijan/MagicViews/wiki) for more info. 
+
 You might encounter this issue after updating: /build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v23/values-v23.xml
 
 There are two options to fix that:
@@ -90,6 +92,7 @@ or Compile your app with Android SDK 23:
       compileSdkVersion 23
    }
 ```
+
 V3.0
 
 * Library now uses new AppCompat views which backport some cool stuff to pre-lollipop devices. See [Android developer blogspot](http://android-developers.blogspot.com/2015/04/android-support-library-221.html) for more info
