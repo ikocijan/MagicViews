@@ -76,6 +76,27 @@ compile 'com.ivankocijan:MagicViews:version@aar'
 
 ## Change log
 
+V3.0.1
+
+* New letter spacing attribute which lets you add horizonatal spacing between characters
+* TabLayout support - you can now set custom font on TabLayout
+
+You might encounter this issue after updating: /build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/res/values-v23/values-v23.xml
+
+There are two options to fix that:
+
+1. Exclude V7 from MagicViews library:
+```groovy
+    compile (compile 'com.ivankocijan:MagicViews:3.0.1@aar) {
+        exclude group: 'com.android.support', module: 'appcompat-v7'
+    }
+```
+2. Compile your app with Android SDK 23:
+```groovy
+   android {
+      compileSdkVersion 23
+   }
+```
 V3.0
 
 * Library now uses new AppCompat views which backport some cool stuff to pre-lollipop devices. See [Android developer blogspot](http://android-developers.blogspot.com/2015/04/android-support-library-221.html) for more info
