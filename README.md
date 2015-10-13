@@ -85,13 +85,15 @@ You might encounter this issue after updating: /build/intermediates/exploded-aar
 
 There are two options to fix that:
 
-1. Exclude V7 from MagicViews library:
+Exclude appcompact-v7 from MagicViews library:
+
 ```groovy
     compile (compile 'com.ivankocijan:MagicViews:3.0.1@aar) {
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
 ```
-2. Compile your app with Android SDK 23:
+
+or Compile your app with Android SDK 23:
 ```groovy
    android {
       compileSdkVersion 23
