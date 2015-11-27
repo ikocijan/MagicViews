@@ -1,8 +1,8 @@
 package com.ivankocijan.TestApp;
 
-import android.app.Application;
-
 import com.ivankocijan.magicviews.MagicViews;
+
+import android.app.Application;
 
 /**
  * @author Koc
@@ -16,6 +16,6 @@ public class TestAppApplication extends Application {
         super.onCreate();
 
         MagicViews.setFontFolderPath(this, "font");
-
+        MagicViews.setDefaultTypeFace(this, "open_sans_semi_bold.ttf");
     }
 }
