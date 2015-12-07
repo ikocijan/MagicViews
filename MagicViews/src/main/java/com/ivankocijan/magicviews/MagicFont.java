@@ -199,7 +199,7 @@ public final class MagicFont {
      * Returns requested typeface. If this class is not initialized it will try to initialize it and return
      * requested font
      */
-    public Typeface getTypeface(Context ctx, String typeface) {
+    public Typeface getTypeface(String typeface) {
 
         if (fontFolderPath == null || fontFolderPath.isEmpty()) {
             throw new MagicViewsNotInitializedException("Font folder path is empty. " +

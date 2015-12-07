@@ -1,11 +1,13 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.MagicFont;
+import com.ivankocijan.magicviews.MagicViews;
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.utils.MagicUtils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -28,7 +30,12 @@ class AttrsUtils {
             float letterSpacing = a.getFloat(R.styleable.MagicFont_letter_spacing, 0);
 
             if (fontStyle != null) {
-                view.setTypeface(MagicFont.getInstance(ctx).getTypeface(ctx, fontStyle));
+                view.setTypeface(MagicFont.getInstance(ctx).getTypeface(fontStyle));
+            } else {
+                String defaultTypeFace = MagicViews.getDefaultTypeFace();
+                if (!TextUtils.isEmpty(defaultTypeFace)) {
+                    view.setTypeface(MagicFont.getInstance(ctx).getTypeface(defaultTypeFace));
+                }
             }
 
             if (letterSpacing != 0) {

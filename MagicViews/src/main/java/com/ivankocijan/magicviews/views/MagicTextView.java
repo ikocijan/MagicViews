@@ -29,18 +29,14 @@ public class MagicTextView extends AppCompatTextView implements MagicView {
         }
     }
 
-
     private void init(AttributeSet attrs) {
         AttrsUtils.setAttributes(getContext(), attrs, this);
     }
-
 
     @Override
     public void setFont(String fontName) {
         FontUtils.setTypeface(getContext(), fontName, this);
     }
-
-
 }
 
 
