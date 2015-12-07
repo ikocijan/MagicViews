@@ -18,6 +18,9 @@ import android.widget.TextView;
  */
 class AttrsUtils {
 
+    private AttrsUtils() {
+    }
+
     /**
      * Set's attributes to TextView if they exist
      */

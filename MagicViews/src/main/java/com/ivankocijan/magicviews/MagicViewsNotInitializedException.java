@@ -7,7 +7,7 @@ package com.ivankocijan.magicviews;
  */
 public class MagicViewsNotInitializedException extends RuntimeException {
 
-    public MagicViewsNotInitializedException (String detailMessage) {
+    public MagicViewsNotInitializedException(String detailMessage) {
         super(detailMessage);
     }
 }

@@ -13,7 +13,11 @@ import android.widget.TextView;
 public class MagicUtils {
 
     private static final String MATCH_ALL_CHARACTERS = "(.)";
+
     private static final String ADD_SPACE_TO_CHARACTER = "$1 ";
+
+    private MagicUtils() {
+    }
 
     public static void addLetterSpacing(float spacing, TextView textView) {
 
