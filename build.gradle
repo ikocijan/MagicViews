@@ -15,8 +15,6 @@ allprojects {
     }
 }
 
-apply plugin: 'android-reporting'
-
 project.ext.preDexLibs = !project.hasProperty('disablePreDex')
 
 subprojects {
