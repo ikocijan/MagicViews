@@ -1,4 +1,4 @@
-package com.ivankocijan.magicviews.views;
+package com.ivankocijan.magicviews.utils;
 
 import com.ivankocijan.magicviews.MagicFont;
 import com.ivankocijan.magicviews.MagicViews;
@@ -16,7 +16,7 @@ import android.widget.TextView;
  *         ivan.kocijan@infinum.hr
  * @since 11/10/15
  */
-class AttrsUtils {
+public class AttrsUtils {
 
     private AttrsUtils() {
     }
