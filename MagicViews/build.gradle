@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply from: './quality.gradle'
+
 
 buildscript {
     repositories {
@@ -11,7 +13,7 @@ buildscript {
 
 apply plugin: 'maven'
 apply plugin: 'signing'
-version = "3.0.2"
+version = "3.0.3"
 group = "com.ivankocijan"
 
 repositories {
@@ -31,13 +33,13 @@ signing {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    buildToolsVersion "23.0.2"
 
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 12
-        versionName "3.0.2"
+        versionCode 13
+        versionName "3.0.3"
     }
     buildTypes {
         release {
@@ -50,9 +52,9 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.android.support:support-v4:23.0.1'
-    compile 'com.android.support:design:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:design:23.1.1'
 
 }
 

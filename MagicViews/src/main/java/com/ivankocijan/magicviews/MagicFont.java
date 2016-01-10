@@ -17,6 +17,11 @@ import java.util.List;
  */
 public final class MagicFont {
 
+    private static volatile MagicFont magicFont;
+
+    //key = font name, value = fontPath
+    private final Hashtable<String, Typeface> fonts = new Hashtable<>();
+
     private AssetManager am;
 
     private String fontFolderPath = null;
@@ -24,15 +29,13 @@ public final class MagicFont {
     //list which contains all asset folders
     private ArrayList<String> assetFolders;
 
-    //key = font name, value = fontPath
-    private final Hashtable<String, Typeface> fonts = new Hashtable<>();
-
     private Context ctx;
-
-    private volatile static MagicFont magicFont;
 
     public MagicFont(Context context) {
         this.ctx = context;
+    }
+
+    private MagicFont() {
     }
 
     public static MagicFont getInstance(Context context) {
@@ -51,9 +54,6 @@ public final class MagicFont {
 
         return magicFont;
 
-    }
-
-    private MagicFont() {
     }
 
     /**
@@ -202,8 +202,8 @@ public final class MagicFont {
     public Typeface getTypeface(String typeface) {
 
         if (fontFolderPath == null || fontFolderPath.isEmpty()) {
-            throw new MagicViewsNotInitializedException("Font folder path is empty. " +
-                    "Please call MagicViews.setFontFolderPath from your application class.");
+            throw new MagicViewsNotInitializedException(
+                    "Font folder path is empty. Please call MagicViews.setFontFolderPath from your application class.");
         }
 
         if (!fonts.containsKey(typeface)) {

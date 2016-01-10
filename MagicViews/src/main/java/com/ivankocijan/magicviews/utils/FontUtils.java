@@ -17,8 +17,12 @@ import android.widget.TextView;
  */
 public class FontUtils {
 
+    private FontUtils() {
+    }
+
     /**
      * Set's typeface on view
+     *
      * @Deprecated use AttrsUtils.setAttributes(Context ctx, AttributeSet attrs, TextView view)
      */
     @Deprecated

@@ -11,6 +11,9 @@ public class MagicViews {
 
     private static String defaultTypeFace;
 
+    private MagicViews() {
+    }
+
     public static void setFontFolderPath(Context ctx, String fontFolderPath) {
         MagicFont.getInstance(ctx).setFontFolderPath(fontFolderPath);
     }
@@ -22,9 +25,8 @@ public class MagicViews {
         if (MagicFont.getInstance(ctx).getTypeface(typeFace) != null) {
             defaultTypeFace = typeFace;
         } else {
-            throw new RuntimeException(String.format(
-                    "Could not find font %s to set as default font! Did you set the correct font folder path before setting default typeface?",
-                    typeFace));
+            throw new RuntimeException(
+                    String.format(ctx.getString(R.string.no_default_font), typeFace));
         }
     }
 

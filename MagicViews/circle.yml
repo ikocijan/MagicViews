@@ -1,0 +1,21 @@
+# Build configuration file for Circle CI
+# needs to be named `circle.yml` and should be in the top level dir of the repo
+
+machine:
+  environment:
+    # set the adb install tcimeout to 8 minutes (default is 2 minutes)
+    ADB_INSTALL_TIMEOUT: 8
+    # set memory limits for java processes because the container has a memory limit of 4G
+    JAVA_OPTS: "-Xms512m -Xmx1024m"
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx1024m -XX:+HeapDumpOnOutOfMemoryError"'
+
+
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter "platform-tools,build-tools-23.0.2,android-23,extra-android-support,extra-google-google_play_services,extra-google-m2repository,extra-android-m2repository"
+
+test:
+  override:
+    # build the project and run static analysis while we wait for the emulator to boot (lint, pmd, findbugs, checkstyle)
+   - ./gradlew assembleDebug check -PdisablePreDex
+

@@ -1,2 +1,5 @@
 <resources>
+    <string name="no_default_font">Could not find font %s to set as default font! Did you set the correct font folder path before setting
+        default typeface?
+    </string>
 </resources>
