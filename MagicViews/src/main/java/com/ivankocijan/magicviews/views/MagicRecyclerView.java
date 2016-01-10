@@ -77,7 +77,8 @@ public class MagicRecyclerView extends RecyclerView {
                 super.onScrolled(recyclerView, dx, dy);
 
                 //Only check scroll down
-                if (loadMoreDataListener != null && dy > 0 && getLayoutManager() != null && getLayoutManager() instanceof LinearLayoutManager) {
+                if (loadMoreDataListener != null && dy > 0 && getLayoutManager() != null
+                        && getLayoutManager() instanceof LinearLayoutManager) {
 
                     firstVisibleItem = ((LinearLayoutManager) getLayoutManager()).findFirstVisibleItemPosition();
                     visibleItemCount = getLayoutManager().getChildCount();

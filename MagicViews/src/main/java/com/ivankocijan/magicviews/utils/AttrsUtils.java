@@ -3,7 +3,6 @@ package com.ivankocijan.magicviews.utils;
 import com.ivankocijan.magicviews.MagicFont;
 import com.ivankocijan.magicviews.MagicViews;
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.utils.MagicUtils;
 
 import android.content.Context;
 import android.content.res.TypedArray;
