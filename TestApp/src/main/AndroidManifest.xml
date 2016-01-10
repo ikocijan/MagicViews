@@ -17,9 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activites.PreferenceExampleActivity"
-                  android:screenOrientation="portrait"
-                />
+        <activity
+                android:name=".activites.PreferenceExampleActivity"
+                android:screenOrientation="portrait"/>
         <activity
                 android:name=".activites.LayoutExampleActivity"
                 android:screenOrientation="portrait">
@@ -27,6 +27,10 @@
         <activity
                 android:name=".activites.CodeExampleActivity"
                 android:screenOrientation="portrait">
+        </activity>
+        <activity
+                android:name=".activites.RecyclerViewExampleActivity"
+                android:label="@string/title_activity_recycler_view_example">
         </activity>
     </application>
 

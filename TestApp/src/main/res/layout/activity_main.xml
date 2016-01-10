@@ -19,27 +19,25 @@
         <com.ivankocijan.magicviews.views.MagicButton
                 android:text="@string/preference_example"
                 android:id="@+id/preference_example"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"/>
+                app:typeFace="open_sans_semi_bold.ttf"
+                style="@style/Button.MainScreen"/>
 
         <com.ivankocijan.magicviews.views.MagicButton
                 android:text="@string/layout_example"
                 android:id="@+id/layout_example"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                style="@style/Button.MainScreen"
                 app:typeFace="open_sans_semi_bold.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicButton
                 android:text="@string/code_example"
                 android:id="@+id/code_example"
-                android:padding="@dimen/padding"
-                android:textSize="@dimen/text_size"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
+                style="@style/Button.MainScreen"
+                app:typeFace="open_sans_semi_bold.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicButton
+                android:text="@string/recycler_view_example"
+                android:id="@+id/recycler_view_example"
+                style="@style/Button.MainScreen"
                 app:typeFace="open_sans_semi_bold.ttf"/>
 
     </LinearLayout>

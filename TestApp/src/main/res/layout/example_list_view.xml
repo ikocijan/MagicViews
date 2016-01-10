@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
+         android:id="@+id/example_list_item_text"
+          android:background="@android:color/white"
+          android:textColor="@android:color/black"
+          android:layout_width="match_parent"
+          tools:text="@string/example_item_s"
+          android:gravity="center_vertical"
+          android:padding="30dp"
+          android:layout_height="wrap_content">
+
+</TextView>
