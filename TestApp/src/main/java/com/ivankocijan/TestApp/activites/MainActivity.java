@@ -40,5 +40,9 @@ public class MainActivity extends Activity {
 
     }
 
+    @OnClick(R.id.recycler_view_example)
+    protected void goToRecyclerViewExample() {
+        startActivity(new Intent(MainActivity.this, RecyclerViewExampleActivity.class));
 
+    }
 }
