@@ -13,7 +13,7 @@ buildscript {
 
 apply plugin: 'maven'
 apply plugin: 'signing'
-version = "3.0.2"
+version = "3.0.3"
 group = "com.ivankocijan"
 
 repositories {
@@ -38,8 +38,8 @@ android {
     defaultConfig {
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 12
-        versionName "3.0.2"
+        versionCode 13
+        versionName "3.0.3"
     }
     buildTypes {
         release {

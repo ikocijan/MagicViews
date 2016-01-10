@@ -5,21 +5,52 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
+import android.view.View;
 
 /**
+ * MagicRecyclerView adds support for endless scrolling and empty state.
+ *
+ * Endless scrolling
+ * To support endless scrolling add {@link LoadMoreDataListener}. When user scrolls down to the last item {@link @onLoadMoreData} method
+ * will be called. If {@link loadMoreDataListner} is not set MagicRecyclerView will behave as normal RecyclerView.
+ *
+ * Empty state
+ * MagicRecyclerView will show empty state out of the box if {@link emptyStateView} is set. If view is not set it will behave as normal
+ * RecyclerView.
+ *
  * @author Koc
  *         ivan.kocijan@infinum.hr
  * @since 10/01/16
  */
 public class MagicRecyclerView extends RecyclerView {
 
-    protected LoadMoreDataListener listener;
+    protected LoadMoreDataListener loadMoreDataListener;
 
     protected int firstVisibleItem;
 
     protected int visibleItemCount;
 
     protected int totalItemCount;
+
+    private View emptyStateView;
+
+    private final AdapterDataObserver observer = new AdapterDataObserver() {
+        @Override
+        public void onChanged() {
+            setRecyclerViewVisibility();
+        }
+
+        @Override
+        public void onItemRangeInserted(int positionStart, int itemCount) {
+            setRecyclerViewVisibility();
+        }
+
+        @Override
+        public void onItemRangeRemoved(int positionStart, int itemCount) {
+            setRecyclerViewVisibility();
+        }
+    };
+
 
     public MagicRecyclerView(Context context) {
         this(context, null);
@@ -45,19 +76,15 @@ public class MagicRecyclerView extends RecyclerView {
             public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
                 super.onScrolled(recyclerView, dx, dy);
 
-                if (listener == null) {
-                    throw new IllegalStateException("LoadMoreDataListener is not set");
-                }
-
                 //Only check scroll down
-                if (dy > 0 && getLayoutManager() != null && getLayoutManager() instanceof LinearLayoutManager) {
+                if (loadMoreDataListener != null && dy > 0 && getLayoutManager() != null && getLayoutManager() instanceof LinearLayoutManager) {
 
                     firstVisibleItem = ((LinearLayoutManager) getLayoutManager()).findFirstVisibleItemPosition();
                     visibleItemCount = getLayoutManager().getChildCount();
                     totalItemCount = getLayoutManager().getItemCount();
 
                     if ((visibleItemCount + firstVisibleItem) >= totalItemCount) {
-                        listener.onLoadMoreData();
+                        loadMoreDataListener.onLoadMoreData();
                     }
 
                 }
@@ -67,8 +94,47 @@ public class MagicRecyclerView extends RecyclerView {
 
     }
 
+    /**
+     * @param listener loadMoreDataListener which notifies when user scrolls down to the last item
+     */
     public void setLoadMoreDataListener(LoadMoreDataListener listener) {
-        this.listener = listener;
+        this.loadMoreDataListener = listener;
+    }
+
+    @Override
+    public void setAdapter(Adapter adapter) {
+        final Adapter currentAdapter = getAdapter();
+        if (currentAdapter != null) {
+            currentAdapter.unregisterAdapterDataObserver(observer);
+        }
+        super.setAdapter(adapter);
+        if (adapter != null) {
+            adapter.registerAdapterDataObserver(observer);
+        }
+
+        setRecyclerViewVisibility();
+    }
+
+    /**
+     * @param emptyState empty state view which recycler view will show when the list is empty
+     */
+    public void setEmptyStateView(View emptyState) {
+        this.emptyStateView = emptyState;
+        setRecyclerViewVisibility();
+    }
+
+    /**
+     * If adapter has no items {@link emptyStateView} is shown and RecyclerView visibility is set to GONE.
+     */
+    private void setRecyclerViewVisibility() {
+
+        if (emptyStateView != null && getAdapter() != null) {
+
+            boolean emptyViewVisible = getAdapter().getItemCount() == 0;
+            emptyStateView.setVisibility(emptyViewVisible ? VISIBLE : GONE);
+            setVisibility(emptyViewVisible ? GONE : VISIBLE);
+
+        }
     }
 
 

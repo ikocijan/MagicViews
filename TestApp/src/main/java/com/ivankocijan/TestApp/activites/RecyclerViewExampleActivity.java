@@ -8,17 +8,22 @@ import com.ivankocijan.magicviews.views.MagicRecyclerView;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.widget.LinearLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 public class RecyclerViewExampleActivity extends Activity implements MagicRecyclerView.LoadMoreDataListener {
 
     @InjectView(R.id.recycler_view)
     MagicRecyclerView recyclerView;
+
+    @InjectView(R.id.empty_state_view)
+    LinearLayout emptyStateView;
 
     private ExampleAdapter adapter;
 
@@ -40,9 +45,14 @@ public class RecyclerViewExampleActivity extends Activity implements MagicRecycl
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
         recyclerView.setLoadMoreDataListener(this);
+        recyclerView.setEmptyStateView(emptyStateView);
 
+    }
+    @OnClick(R.id.load_items_button)
+    protected void loadItems () {
         addDummyItemsToList(20);
     }
+
 
     private void addDummyItemsToList(int numberOfItems) {
 
