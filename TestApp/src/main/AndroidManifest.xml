@@ -32,6 +32,10 @@
                 android:name=".activites.RecyclerViewExampleActivity"
                 android:label="@string/title_activity_recycler_view_example">
         </activity>
+        <activity
+                android:name=".activites.MagicFontSpanExampleActivity"
+                android:label="@string/title_activity_magic_font_span_example">
+        </activity>
     </application>
 
 </manifest>

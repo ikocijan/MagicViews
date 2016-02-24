@@ -45,4 +45,10 @@ public class MainActivity extends Activity {
         startActivity(new Intent(MainActivity.this, RecyclerViewExampleActivity.class));
 
     }
+
+    @OnClick(R.id.magic_font_span_example)
+    protected void goToMagicFontSpanExample() {
+        startActivity(new Intent(MainActivity.this, MagicFontSpanExampleActivity.class));
+
+    }
 }
