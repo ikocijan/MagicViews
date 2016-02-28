@@ -45,4 +45,10 @@ public class MainActivity extends Activity {
         startActivity(new Intent(MainActivity.this, RecyclerViewExampleActivity.class));
 
     }
+
+    @OnClick(R.id.custom_view_example)
+    protected void goToCustomViewExample() {
+        startActivity(new Intent(MainActivity.this, CustomViewActivity.class));
+
+    }
 }

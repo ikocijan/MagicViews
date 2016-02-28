@@ -30,15 +30,16 @@ public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTe
     }
 
     private void init(AttributeSet attrs) {
-
-        AttrsUtils.setAttributes(getContext(), attrs, this);
-
+        if (!isInEditMode()) {
+            AttrsUtils.setAttributes(getContext(), attrs, this);
+        }
     }
 
     @Override
     public void setFont(String fontName) {
-        FontUtils.setTypeface(getContext(), fontName, this);
-
+        if (!isInEditMode()) {
+            FontUtils.setTypeface(getContext(), fontName, this);
+        }
     }
 
 

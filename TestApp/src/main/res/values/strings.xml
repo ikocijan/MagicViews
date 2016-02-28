@@ -18,7 +18,9 @@
     <string name="button">Button</string>
     <string name="title_activity_code_example">CodeExampleActivity</string>
     <string name="title_activity_recycler_view_example">RecyclerViewExampleActivity</string>
+    <string name="title_activity_custom_view">CustomViewExampleActivity</string>
     <string name="recycler_view_example">RecyclerView example</string>
+    <string name="custom_view_example">Custom View example</string>
     <string name="example_item_s">Example item %s</string>
     <string name="load_items">Load items</string>
     <string name="list_is_empty">List is empty!</string>

@@ -32,6 +32,10 @@
                 android:name=".activites.RecyclerViewExampleActivity"
                 android:label="@string/title_activity_recycler_view_example">
         </activity>
+        <activity
+                android:name=".activites.CustomViewActivity"
+                android:label="@string/title_activity_custom_view">
+        </activity>
     </application>
 
 </manifest>

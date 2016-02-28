@@ -25,23 +25,22 @@ public class MagicButton extends AppCompatButton implements MagicView {
 
     public MagicButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
-        if (!isInEditMode()) {
-            init(attrs);
-        }
+        init(attrs);
 
     }
 
     private void init(AttributeSet attrs) {
-
-        AttrsUtils.setAttributes(getContext(), attrs, this);
+        if (!isInEditMode()) {
+            AttrsUtils.setAttributes(getContext(), attrs, this);
+        }
 
     }
 
     @Override
     public void setFont(String fontName) {
-        FontUtils.setTypeface(getContext(), fontName, this);
-
+        if (!isInEditMode()) {
+            FontUtils.setTypeface(getContext(), fontName, this);
+        }
     }
 
 }
