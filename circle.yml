@@ -19,9 +19,7 @@ test:
   override:
     # build the project and run static analysis while we wait for the emulator to boot (lint, pmd, findbugs, checkstyle)
    - ./gradlew assembleDebug check -PdisablePreDex
-
-    post:
-       # copy the build outputs to artifacts
-       - cp -r app/build/outputs $CIRCLE_ARTIFACTS
-       - cp -r app/build/reports $CIRCLE_ARTIFACTS
-
+  post:
+    # copy the build outputs to artifacts
+    - cp -r MagicViews/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r MagicViews/build/reports $CIRCLE_ARTIFACTS
