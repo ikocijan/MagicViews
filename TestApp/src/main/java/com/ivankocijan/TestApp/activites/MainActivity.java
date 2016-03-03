@@ -49,6 +49,10 @@ public class MainActivity extends Activity {
     @OnClick(R.id.magic_font_span_example)
     protected void goToMagicFontSpanExample() {
         startActivity(new Intent(MainActivity.this, MagicFontSpanExampleActivity.class));
+    }
 
+    @OnClick(R.id.custom_view_example)
+    protected void goToCustomViewExample() {
+        startActivity(new Intent(MainActivity.this, CustomViewActivity.class));
     }
 }
