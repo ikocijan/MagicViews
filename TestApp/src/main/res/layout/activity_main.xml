@@ -41,6 +41,12 @@
                 app:typeFace="open_sans_semi_bold.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicButton
+                android:text="@string/magic_font_span_example"
+                android:id="@+id/magic_font_span_example"
+                style="@style/Button.MainScreen"
+                app:typeFace="open_sans_semi_bold.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicButton
                 android:text="@string/custom_view_example"
                 android:id="@+id/custom_view_example"
                 style="@style/Button.MainScreen"
