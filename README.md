@@ -61,11 +61,17 @@ For a complete list of features and how to use them see [wiki page](https://gith
 * CheckboxPreference
 * SwitchPreference
 * EditTextPreference
+* Span
 
 ## Supported Android versions
 * 2.3 or higher
 
 ## Change log
+
+V3.1.0
+
+* New MagicFontSpan - See example [here](https://github.com/ikocijan/MagicViews/blob/development/TestApp%2Fsrc%2Fmain%2Fjava%2Fcom%2Fivankocijan%2FTestApp%2Factivites%2FMagicFontSpanExampleActivity.java)
+* Layout preview no longer shows exception when MagicView is added to custom view - [See example] (https://github.com/ikocijan/MagicViews/blob/development/TestApp%2Fsrc%2Fmain%2Fjava%2Fcom%2Fivankocijan%2FTestApp%2Factivites%2FCustomViewActivity.java) 
 
 V3.0.1
 
