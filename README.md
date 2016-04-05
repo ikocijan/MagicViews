@@ -87,7 +87,7 @@ There are two options to fix that:
 Exclude appcompact-v7 from MagicViews library:
 
 ```groovy
-    compile (compile 'com.ivankocijan:MagicViews:3.0.1@aar) {
+    compile('com.ivankocijan:MagicViews:3.1.0@aar') {
         exclude group: 'com.android.support', module: 'appcompat-v7'
     }
 ```
