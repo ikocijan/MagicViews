@@ -1,32 +1,42 @@
 package com.ivankocijan.magicviews;
 
-import android.content.Context;
+import android.content.res.AssetManager;
 
 /**
  * @author Koc
  *         ivan.kocijan@infinum.hr
  * @since 19.12.14.
  */
-public class MagicViews {
+public final class MagicViews {
 
     private static String defaultTypeFace;
 
     private MagicViews() {
+        throw new AssertionError("Cannot be instantiated.");
     }
 
-    public static void setFontFolderPath(Context ctx, String fontFolderPath) {
-        MagicFont.getInstance(ctx).setFontFolderPath(fontFolderPath);
+    public static void lazyInit(AssetManager am, String fontDirectoryPath) {
+        if (am == null) {
+            throw new RuntimeException("AssetManager must not be null.");
+        }
+        MagicFont.INSTANCE.setAssetManager(am);
+        MagicFont.INSTANCE.setFontDirectory(fontDirectoryPath);
+    }
+
+    public static void init(AssetManager am, String fontDirectoryPath) {
+
     }
 
     /**
      * @param typeFace a default typeface to use if no typeface is set
      */
-    public static void setDefaultTypeFace(Context ctx, String typeFace) {
-        if (MagicFont.getInstance(ctx).getTypeface(typeFace) != null) {
+    public static void setDefaultTypeFace(String typeFace) {
+        if (MagicFont.INSTANCE.getTypeface(typeFace) != null) {
             defaultTypeFace = typeFace;
         } else {
-            throw new RuntimeException(
-                    String.format(ctx.getString(R.string.no_default_font), typeFace));
+            throw new RuntimeException(String.format(
+                    "Could not find font %s to set as default font! Did you set the correct font folder path before setting default typeface?",
+                    typeFace));
         }
     }
 

@@ -27,9 +27,9 @@ public class MagicFontSpanExampleActivity extends Activity {
 
         SpannableStringBuilder builder = new SpannableStringBuilder(getString(R.string.magic_font_span_text));
 
-        builder.setSpan(new MagicFontSpan(this, "open_sans_semi_bold.ttf"), 15, 23, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        builder.setSpan(new MagicFontSpan(this, "open_sans_light.ttf"), 27, 44, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
-        builder.setSpan(new MagicFontSpan(this, "galaxyfaraway.ttf"),
+        builder.setSpan(new MagicFontSpan("open_sans_semi_bold.ttf"), 15, 23, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        builder.setSpan(new MagicFontSpan("open_sans_light.ttf"), 27, 44, Spanned.SPAN_EXCLUSIVE_INCLUSIVE);
+        builder.setSpan(new MagicFontSpan("galaxyfaraway.ttf"),
                 builder.length() - 10,
                 builder.length() - 1,
                 Spanned.SPAN_EXCLUSIVE_INCLUSIVE);

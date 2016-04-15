@@ -15,7 +15,7 @@ public class TestAppApplication extends Application {
     public void onCreate () {
         super.onCreate();
 
-        MagicViews.setFontFolderPath(this, "font");
-        MagicViews.setDefaultTypeFace(this, "open_sans_semi_bold.ttf");
+        MagicViews.lazyInit(getAssets(), "font");
+        MagicViews.setDefaultTypeFace("open_sans_semi_bold.ttf");
     }
 }

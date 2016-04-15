@@ -32,11 +32,11 @@ public class AttrsUtils {
             float letterSpacing = a.getFloat(R.styleable.MagicFont_letter_spacing, 0);
 
             if (fontStyle != null) {
-                view.setTypeface(MagicFont.getInstance(ctx).getTypeface(fontStyle));
+                view.setTypeface(MagicFont.INSTANCE.getTypeface(fontStyle));
             } else {
                 String defaultTypeFace = MagicViews.getDefaultTypeFace();
                 if (!TextUtils.isEmpty(defaultTypeFace)) {
-                    view.setTypeface(MagicFont.getInstance(ctx).getTypeface(defaultTypeFace));
+                    view.setTypeface(MagicFont.INSTANCE.getTypeface(defaultTypeFace));
                 }
             }
 

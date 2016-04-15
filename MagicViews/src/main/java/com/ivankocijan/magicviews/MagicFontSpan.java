@@ -1,6 +1,5 @@
 package com.ivankocijan.magicviews;
 
-import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.TextPaint;
@@ -17,9 +16,9 @@ public class MagicFontSpan extends TypefaceSpan {
 
     private final Typeface typeface;
 
-    public MagicFontSpan(Context context, String typeface) {
+    public MagicFontSpan(String typeface) {
         super("");
-        this.typeface = MagicFont.getInstance(context).getTypeface(typeface);
+        this.typeface = MagicFont.INSTANCE.getTypeface(typeface);
     }
 
     @Override
