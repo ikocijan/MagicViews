@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.interfaces.MagicView;
+import com.ivankocijan.magicviews.TypefaceView;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatMultiAutoCompleteTextView;
@@ -12,7 +12,7 @@ import android.util.AttributeSet;
  *         ivan.kocijan@infinum.hr
  * @since 23.05.15.
  */
-public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView implements MagicView {
+public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTextView implements TypefaceView {
 
     private MagicViewDelegate delegate;
 
@@ -38,10 +38,12 @@ public class MagicMultiAutoCompleteTextView extends AppCompatMultiAutoCompleteTe
 
     @Override
     public void setTypeface(String typeFaceName) {
-        if (!isInEditMode()) {
-            delegate.setTypeface(typeFaceName);
-        }
+        delegate.setTypeface(typeFaceName);
     }
 
+    @Override
+    public void setCharacterSpacing(float characterSpacing) {
+        delegate.setCharacterSpacing(characterSpacing);
+    }
 
 }

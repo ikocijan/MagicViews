@@ -2,19 +2,19 @@
 <resources>
     <declare-styleable name="MagicFont">
         <attr name="typeFace" format="string"/>
-        <attr name="letter_spacing" format="float"/>
+        <attr name="characterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicTabLayout">
         <attr name="childrenTypeFace" format="string"/>
-        <attr name="childrenLetterSpacing" format="float"/>
+        <attr name="childrenCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicToolbar">
         <attr name="titleTypeFace" format="string"/>
-        <attr name="titleLetterSpacing" format="float"/>
+        <attr name="titleCharacterSpacing" format="float"/>
         <attr name="subtitleTypeFace" format="string"/>
-        <attr name="subtitleLetterSpacing" format="float"/>
+        <attr name="subtitleCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicPreference">

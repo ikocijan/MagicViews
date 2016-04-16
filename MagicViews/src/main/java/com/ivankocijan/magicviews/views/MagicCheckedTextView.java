@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.interfaces.MagicView;
+import com.ivankocijan.magicviews.TypefaceView;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatCheckedTextView;
@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 /**
  * Created by ivankocijan on 19.05.2014..
  */
-public class MagicCheckedTextView extends AppCompatCheckedTextView implements MagicView {
+public class MagicCheckedTextView extends AppCompatCheckedTextView implements TypefaceView {
 
     private MagicViewDelegate delegate;
 
@@ -37,9 +37,12 @@ public class MagicCheckedTextView extends AppCompatCheckedTextView implements Ma
 
     @Override
     public void setTypeface(String typeFaceName) {
-        if (!isInEditMode()) {
-            delegate.setTypeface(typeFaceName);
-        }
+        delegate.setTypeface(typeFaceName);
+    }
+
+    @Override
+    public void setCharacterSpacing(float characterSpacing) {
+        delegate.setCharacterSpacing(characterSpacing);
     }
 
 }

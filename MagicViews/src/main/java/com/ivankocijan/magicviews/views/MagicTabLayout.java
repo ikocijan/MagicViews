@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.interfaces.MagicView;
+import com.ivankocijan.magicviews.TypefaceView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,12 +22,12 @@ import java.util.List;
  *         ivan.kocijan@infinum.hr
  * @since 11/10/15
  */
-public class MagicTabLayout extends TabLayout implements MagicView {
+public class MagicTabLayout extends TabLayout implements TypefaceView {
 
     private Field tabViewField;
     private List<MagicViewDelegate> delegates = new ArrayList<>();
     private String childrenTypeFace;
-    private float childrenLetterSpacing;
+    private float childrenCharacterSpacing;
 
     public MagicTabLayout(Context context) {
         this(context, null);
@@ -43,10 +43,10 @@ public class MagicTabLayout extends TabLayout implements MagicView {
     }
 
     private void init(AttributeSet attrs) {
-        if (attrs != null) {
+        if (!isInEditMode() && attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicTabLayout);
             this.childrenTypeFace = a.getString(R.styleable.MagicTabLayout_childrenTypeFace);
-            this.childrenLetterSpacing = a.getFloat(R.styleable.MagicTabLayout_childrenLetterSpacing, 0);
+            this.childrenCharacterSpacing = a.getFloat(R.styleable.MagicTabLayout_childrenCharacterSpacing, 0);
             a.recycle();
         }
     }
@@ -54,14 +54,23 @@ public class MagicTabLayout extends TabLayout implements MagicView {
     private void createDelegate(TextView textView) {
         MagicViewDelegate delegate = new MagicViewDelegate(textView);
         delegate.setTypeface(this.childrenTypeFace);
-        delegate.setLetterSpacing(this.childrenLetterSpacing);
+        delegate.setCharacterSpacing(this.childrenCharacterSpacing);
         delegates.add(delegate);
     }
 
     @Override
     public void setTypeface(String typeFaceName) {
-        for (int i = 0; i < delegates.size(); i++) {
+        final int childCount = delegates.size();
+        for (int i = 0; i < childCount; i++) {
             delegates.get(i).setTypeface(typeFaceName);
+        }
+    }
+
+    @Override
+    public void setCharacterSpacing(float characterSpacing) {
+        final int childCount = delegates.size();
+        for (int i = 0; i < childCount; i++) {
+            delegates.get(i).setCharacterSpacing(characterSpacing);
         }
     }
 

@@ -35,10 +35,10 @@ class MagicViewDelegate {
         if (attrs != null) {
             TypedArray a = this.magicView.getContext().obtainStyledAttributes(attrs, R.styleable.MagicFont);
             String typeFace = a.getString(R.styleable.MagicFont_typeFace);
-            float letterSpacing = a.getFloat(R.styleable.MagicFont_letter_spacing, 0);
+            float characterSpacing = a.getFloat(R.styleable.MagicFont_characterSpacing, 0);
 
             setTypeface(typeFace);
-            setLetterSpacing(letterSpacing);
+            setCharacterSpacing(characterSpacing);
 
             a.recycle();
         }
@@ -56,15 +56,15 @@ class MagicViewDelegate {
         this.magicView.setTypeface(MagicTypeface.INSTANCE.getTypeface(typeFace));
     }
 
-    public void setLetterSpacing(float letterSpacing) {
-        if (letterSpacing != 0) {
+    public void setCharacterSpacing(float characterSpacing) {
+        if (characterSpacing != 0) {
             String originalText = this.magicView.getText().toString();
 
             if (originalText.length() > 1) {
                 originalText = originalText.replaceAll(MATCH_ALL_CHARACTERS, ADD_SPACE_TO_CHARACTER);
 
                 SpannableString finalText = new SpannableString(originalText);
-                finalText.setSpan(new ScaleXSpan(letterSpacing), 0, originalText.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+                finalText.setSpan(new ScaleXSpan(characterSpacing), 0, originalText.length(), Spannable.SPAN_INCLUSIVE_INCLUSIVE);
                 this.magicView.setText(finalText, TextView.BufferType.SPANNABLE);
             }
         }

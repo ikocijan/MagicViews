@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:childrenTypeFace="LibreBaskerville-Regular.ttf"
-                app:childrenLetterSpacing="0.5"/>
+                app:childrenCharacterSpacing="0.5"/>
 
     </android.support.design.widget.AppBarLayout>
 

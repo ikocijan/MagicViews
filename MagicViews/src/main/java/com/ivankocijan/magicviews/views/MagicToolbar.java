@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.interfaces.MagicView;
+import com.ivankocijan.magicviews.TypefaceView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,11 +15,11 @@ import android.widget.TextView;
 /**
  * Created by jmarkovic on 16/04/16.
  */
-public class MagicToolbar extends Toolbar implements MagicView {
+public class MagicToolbar extends Toolbar implements TypefaceView {
 
     private SparseArray<MagicViewDelegate> delegates = new SparseArray<>();
     private String titleTypeFace, subtitleTypeFace;
-    private float titleLetterSpacing, subtitleLetterSpacing;
+    private float titleCharacterSpacing, subtitleCharacterSpacing;
 
     public MagicToolbar(Context context) {
         this(context, null);
@@ -38,9 +38,9 @@ public class MagicToolbar extends Toolbar implements MagicView {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicToolbar);
             this.titleTypeFace = a.getString(R.styleable.MagicToolbar_titleTypeFace);
-            this.titleLetterSpacing = a.getFloat(R.styleable.MagicToolbar_titleLetterSpacing, 0);
+            this.titleCharacterSpacing = a.getFloat(R.styleable.MagicToolbar_titleCharacterSpacing, 0);
             this.subtitleTypeFace = a.getString(R.styleable.MagicToolbar_subtitleTypeFace);
-            this.subtitleLetterSpacing = a.getFloat(R.styleable.MagicToolbar_subtitleLetterSpacing, 0);
+            this.subtitleCharacterSpacing = a.getFloat(R.styleable.MagicToolbar_subtitleCharacterSpacing, 0);
             a.recycle();
         }
     }
@@ -64,7 +64,7 @@ public class MagicToolbar extends Toolbar implements MagicView {
         }
         if (delegate != null) {
             delegate.setTypeface(this.titleTypeFace);
-            delegate.setLetterSpacing(this.titleLetterSpacing);
+            delegate.setCharacterSpacing(this.titleCharacterSpacing);
         }
     }
 
@@ -87,7 +87,7 @@ public class MagicToolbar extends Toolbar implements MagicView {
         }
         if (delegate != null) {
             delegate.setTypeface(this.subtitleTypeFace);
-            delegate.setLetterSpacing(this.subtitleLetterSpacing);
+            delegate.setCharacterSpacing(this.subtitleCharacterSpacing);
         }
     }
 
@@ -95,6 +95,12 @@ public class MagicToolbar extends Toolbar implements MagicView {
     public void setTypeface(String typeFaceName) {
         setTitleTypeFace(typeFaceName);
         setSubtitleTypeFace(typeFaceName);
+    }
+
+    @Override
+    public void setCharacterSpacing(float characterSpacing) {
+        setTitleCharacterSpacing(characterSpacing);
+        setSubtitleCharacterSpacing(characterSpacing);
     }
 
     public void setTitleTypeFace(String titleTypeFace) {
@@ -113,19 +119,19 @@ public class MagicToolbar extends Toolbar implements MagicView {
         }
     }
 
-    public void setTitleLetterSpacing(float titleLetterSpacing) {
-        this.titleLetterSpacing = titleLetterSpacing;
+    public void setTitleCharacterSpacing(float titleCharacterSpacing) {
+        this.titleCharacterSpacing = titleCharacterSpacing;
         final MagicViewDelegate delegate = delegates.get(R.id.tv_toolbar_title);
         if (delegate != null) {
-            delegate.setLetterSpacing(titleLetterSpacing);
+            delegate.setCharacterSpacing(titleCharacterSpacing);
         }
     }
 
-    public void setSubtitleLetterSpacing(float subtitleLetterSpacing) {
-        this.subtitleLetterSpacing = subtitleLetterSpacing;
+    public void setSubtitleCharacterSpacing(float subtitleCharacterSpacing) {
+        this.subtitleCharacterSpacing = subtitleCharacterSpacing;
         final MagicViewDelegate delegate = delegates.get(R.id.tv_toolbar_subtitle);
         if (delegate != null) {
-            delegate.setLetterSpacing(subtitleLetterSpacing);
+            delegate.setCharacterSpacing(subtitleCharacterSpacing);
         }
     }
 }
