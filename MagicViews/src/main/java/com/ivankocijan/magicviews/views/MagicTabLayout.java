@@ -1,7 +1,6 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.interfaces.MagicView;
-import com.ivankocijan.magicviews.utils.FontUtils;
 
 import android.content.Context;
 import android.support.design.widget.TabLayout;
@@ -17,7 +16,7 @@ import android.widget.TextView;
  */
 public class MagicTabLayout extends TabLayout implements MagicView {
 
-    private String fontName;
+    private MagicViewDelegate delegate;
 
     public MagicTabLayout(Context context) {
         this(context, null);
@@ -32,13 +31,14 @@ public class MagicTabLayout extends TabLayout implements MagicView {
         init(attrs);
     }
 
-
     private void init(AttributeSet attrs) {
-        // Nothing for now
+        if (!isInEditMode()) {
+            // todo delegate
+        }
     }
 
     @Override
-    public void setFont(String fontName) {
+    public void setTypeface(String typeFaceName) {
 
         ViewGroup tabLayoutViewGroup = (ViewGroup) this.getChildAt(0);
         int tabsCount = tabLayoutViewGroup.getChildCount();
@@ -52,7 +52,8 @@ public class MagicTabLayout extends TabLayout implements MagicView {
                 View tabViewChild = tabViewGroup.getChildAt(i);
 
                 if (tabViewChild instanceof TextView) {
-                    FontUtils.setTypeface(getContext(), fontName, (TextView) tabViewChild);
+                    // todo to delegate
+//                    FontUtils.setTypeface(getContext(), typeFaceName, (TextView) tabViewChild);
                 }
             }
         }

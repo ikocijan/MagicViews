@@ -2,8 +2,6 @@ package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.interfaces.MagicView;
-import com.ivankocijan.magicviews.utils.FontUtils;
-import com.ivankocijan.magicviews.utils.AttrsUtils;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatButton;
@@ -14,32 +12,32 @@ import android.util.AttributeSet;
  */
 public class MagicButton extends AppCompatButton implements MagicView {
 
+    private MagicViewDelegate delegate;
+
     public MagicButton(Context context) {
         this(context, null);
     }
 
     public MagicButton(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.buttonStyle);
-
     }
 
     public MagicButton(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         init(attrs);
-
     }
 
     private void init(AttributeSet attrs) {
         if (!isInEditMode()) {
-            AttrsUtils.setAttributes(getContext(), attrs, this);
+            delegate = new MagicViewDelegate(this);
+            delegate.setAttributes(attrs);
         }
-
     }
 
     @Override
-    public void setFont(String fontName) {
+    public void setTypeface(String typeFaceName) {
         if (!isInEditMode()) {
-            FontUtils.setTypeface(getContext(), fontName, this);
+            delegate.setTypeface(typeFaceName);
         }
     }
 

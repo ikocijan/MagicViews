@@ -35,42 +35,42 @@ public class CodeExampleActivity extends Activity {
         MagicTextView magicTextView = new MagicTextView(this);
         magicTextView.setTextAppearance(this, R.style.Text);
         magicTextView.setText("TextView");
-        magicTextView.setFont("open_sans_semi_bold.ttf");
+        magicTextView.setTypeface("open_sans_semi_bold.ttf");
 
         MagicEditText magicEditText = new MagicEditText(this);
         magicEditText.setTextAppearance(this, R.style.Text);
         magicEditText.setHint("Edit text");
-        magicEditText.setFont("open_sans_semi_bold.ttf");
+        magicEditText.setTypeface("open_sans_semi_bold.ttf");
 
         MagicButton magicButton = new MagicButton(this);
         magicButton.setTextAppearance(this, R.style.Text);
         magicButton.setText("Button");
-        magicButton.setFont("open_sans_semi_bold.ttf");
+        magicButton.setTypeface("open_sans_semi_bold.ttf");
 
         MagicCheckBox magicCheckBox = new MagicCheckBox(this);
         magicCheckBox.setTextAppearance(this, R.style.Text);
         magicCheckBox.setText("Checkbox");
-        magicCheckBox.setFont("open_sans_semi_bold.ttf");
+        magicCheckBox.setTypeface("open_sans_semi_bold.ttf");
 
         MagicCheckedTextView magicCheckedTextView = new MagicCheckedTextView(this);
         magicCheckedTextView.setTextAppearance(this, R.style.Text);
         magicCheckedTextView.setText("Checked text view");
-        magicCheckedTextView.setFont("open_sans_semi_bold.ttf");
+        magicCheckedTextView.setTypeface("open_sans_semi_bold.ttf");
 
         MagicRadioButton magicRadioButton = new MagicRadioButton(this);
         magicRadioButton.setTextAppearance(this, R.style.Text);
         magicRadioButton.setText("Radio button");
-        magicRadioButton.setFont("open_sans_semi_bold.ttf");
+        magicRadioButton.setTypeface("open_sans_semi_bold.ttf");
 
         MagicAutoCompleteTextView magicAutoCompleteTextView = new MagicAutoCompleteTextView(this);
         magicAutoCompleteTextView.setTextAppearance(this, R.style.Text);
         magicAutoCompleteTextView.setText("Autocomplete");
-        magicAutoCompleteTextView.setFont("open_sans_semi_bold.ttf");
+        magicAutoCompleteTextView.setTypeface("open_sans_semi_bold.ttf");
 
         MagicMultiAutoCompleteTextView magicMultiAutoCompleteTextView = new MagicMultiAutoCompleteTextView(this);
         magicMultiAutoCompleteTextView.setTextAppearance(this, R.style.Text);
         magicMultiAutoCompleteTextView.setText("Multi autocomplete");
-        magicMultiAutoCompleteTextView.setFont("open_sans_semi_bold.ttf");
+        magicMultiAutoCompleteTextView.setTypeface("open_sans_semi_bold.ttf");
 
         wrapper.addView(magicTextView);
         wrapper.addView(magicEditText);

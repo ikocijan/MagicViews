@@ -1,14 +1,11 @@
 package com.ivankocijan.magicviews.utils;
 
-import com.ivankocijan.magicviews.MagicFont;
+import com.ivankocijan.magicviews.MagicTypeface;
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.enums.PreferenceType;
-import com.ivankocijan.magicviews.exceptions.FontNameEmptyException;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.annotation.NonNull;
-import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -21,42 +18,6 @@ public class FontUtils {
     }
 
     /**
-     * Set's typeface on view
-     *
-     * @Deprecated use AttrsUtils.setAttributes(Context ctx, AttributeSet attrs, TextView view)
-     */
-    @Deprecated
-    public static void setTypeface(Context ctx, AttributeSet attrs, TextView view) {
-
-        if (attrs != null && ctx != null && view != null) {
-
-            TypedArray a = ctx.obtainStyledAttributes(attrs, R.styleable.MagicFont);
-            String fontStyle = a.getString(R.styleable.MagicFont_typeFace);
-
-            if (fontStyle != null) {
-                view.setTypeface(MagicFont.INSTANCE.getTypeface(fontStyle));
-            }
-
-            a.recycle();
-
-        }
-
-    }
-
-    public static void setTypeface(Context ctx, @NonNull String fontName, TextView view) {
-
-        if (TextUtils.isEmpty(fontName)) {
-            throw new FontNameEmptyException(
-                    "In order to set the typeface fontName param can not be empty");
-        }
-
-        if (ctx != null && view != null) {
-            view.setTypeface(MagicFont.INSTANCE.getTypeface(fontName));
-        }
-
-    }
-
-    /**
      * Set's font style for custom preference
      */
     public static void setPreferenceTypeface(Context ctx, String fontStyle, TextView... views) {
@@ -65,7 +26,7 @@ public class FontUtils {
 
             for (TextView view : views) {
 
-                view.setTypeface(MagicFont.INSTANCE.getTypeface(fontStyle));
+                view.setTypeface(MagicTypeface.INSTANCE.getTypeface(fontStyle));
 
             }
 

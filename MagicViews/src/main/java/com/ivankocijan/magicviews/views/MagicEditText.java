@@ -2,8 +2,6 @@ package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.interfaces.MagicView;
-import com.ivankocijan.magicviews.utils.FontUtils;
-import com.ivankocijan.magicviews.utils.AttrsUtils;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
@@ -13,6 +11,8 @@ import android.util.AttributeSet;
  * Created by ivankocijan on 18.05.2014..
  */
 public class MagicEditText extends AppCompatEditText implements MagicView {
+
+    private MagicViewDelegate delegate;
 
     public MagicEditText(Context context) {
         this(context, null);
@@ -29,14 +29,15 @@ public class MagicEditText extends AppCompatEditText implements MagicView {
 
     private void init(AttributeSet attrs) {
         if (!isInEditMode()) {
-            AttrsUtils.setAttributes(getContext(), attrs, this);
+            delegate = new MagicViewDelegate(this);
+            delegate.setAttributes(attrs);
         }
     }
 
     @Override
-    public void setFont(String fontName) {
+    public void setTypeface(String typeFaceName) {
         if (!isInEditMode()) {
-            FontUtils.setTypeface(getContext(), fontName, this);
+            delegate.setTypeface(typeFaceName);
         }
     }
 

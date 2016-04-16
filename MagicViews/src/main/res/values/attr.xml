@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="MagicFont">
+    <declare-styleable name="MagicTypeface">
         <attr name="typeFace" format="string"/>
         <attr name="letter_spacing" format="float"/>
     </declare-styleable>

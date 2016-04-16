@@ -10,15 +10,15 @@ import android.text.style.TypefaceSpan;
  *
  * @author Josip Marković
  */
-public class MagicFontSpan extends TypefaceSpan {
+public class MagicTypeFaceSpan extends TypefaceSpan {
 
     public static final float ITALIC_SKEW = -0.25f;
 
     private final Typeface typeface;
 
-    public MagicFontSpan(String typeface) {
+    public MagicTypeFaceSpan(String typeface) {
         super("");
-        this.typeface = MagicFont.INSTANCE.getTypeface(typeface);
+        this.typeface = MagicTypeface.INSTANCE.getTypeface(typeface);
     }
 
     @Override

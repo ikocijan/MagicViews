@@ -39,6 +39,6 @@ public class CustomFrameLayout extends FrameLayout {
         final MagicTextView magicTextView = (MagicTextView) getChildAt(0);
         // font is added dynamically through code
         // preview of this view should still be valid
-        magicTextView.setFont("galaxyfaraway.ttf");
+        magicTextView.setTypeface("galaxyfaraway.ttf");
     }
 }

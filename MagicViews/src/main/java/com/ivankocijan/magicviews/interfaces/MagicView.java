@@ -7,6 +7,6 @@ package com.ivankocijan.magicviews.interfaces;
  */
 public interface MagicView {
 
-    void setFont(String fontName);
+    void setTypeface(String typeFaceName);
 
 }

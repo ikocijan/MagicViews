@@ -19,8 +19,8 @@ public final class MagicViews {
         if (am == null) {
             throw new RuntimeException("AssetManager must not be null.");
         }
-        MagicFont.INSTANCE.setAssetManager(am);
-        MagicFont.INSTANCE.setFontDirectory(fontDirectoryPath);
+        MagicTypeface.INSTANCE.setAssetManager(am);
+        MagicTypeface.INSTANCE.setTypefaceDirectory(fontDirectoryPath);
     }
 
     public static void init(AssetManager am, String fontDirectoryPath) {
@@ -31,7 +31,7 @@ public final class MagicViews {
      * @param typeFace a default typeface to use if no typeface is set
      */
     public static void setDefaultTypeFace(String typeFace) {
-        if (MagicFont.INSTANCE.getTypeface(typeFace) != null) {
+        if (MagicTypeface.INSTANCE.getTypeface(typeFace) != null) {
             defaultTypeFace = typeFace;
         } else {
             throw new RuntimeException(String.format(
