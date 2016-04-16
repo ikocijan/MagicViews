@@ -38,11 +38,11 @@
         <attr name="checkBoxPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
-    <declare-styleable name="MagicPreferenceGroup">
-        <attr name="prefGroupTitleTypeFace" format="string"/>
-        <attr name="prefGroupTitleCharacterSpacing" format="float"/>
-        <attr name="prefGroupSummaryTypeFace" format="string"/>
-        <attr name="prefGroupSummaryCharacterSpacing" format="float"/>
+    <declare-styleable name="MagicPreferenceCategory">
+        <attr name="prefCategoryTitleTypeFace" format="string"/>
+        <attr name="prefCategoryTitleCharacterSpacing" format="float"/>
+        <attr name="prefCategorySummaryTypeFace" format="string"/>
+        <attr name="prefCategorySummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicEditTextPreference">

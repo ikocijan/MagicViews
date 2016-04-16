@@ -14,25 +14,30 @@ import android.view.View;
 /**
  * Created by ivankocijan on 22.05.2014..
  */
-@TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
 public class MagicSwitchPreference extends SwitchPreference implements TypefacePreference {
 
     private MagicPreferenceDelegate delegate;
 
     public MagicSwitchPreference(Context context) {
-        this(context, null);
+        super(context);
+        init(null);
     }
 
     public MagicSwitchPreference(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    @TargetApi(Build.VERSION_CODES.ICE_CREAM_SANDWICH)
-    public MagicSwitchPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+        super(context, attrs);
         init(attrs);
     }
 
+    public MagicSwitchPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public MagicSwitchPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(attrs);
+    }
 
     private void init(AttributeSet attrs) {
         this.delegate = new MagicPreferenceDelegate();
@@ -52,7 +57,9 @@ public class MagicSwitchPreference extends SwitchPreference implements TypefaceP
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        delegate.onBindView(view);
+        if (!view.isInEditMode()) {
+            delegate.onBindView(view);
+        }
     }
 
     @Override

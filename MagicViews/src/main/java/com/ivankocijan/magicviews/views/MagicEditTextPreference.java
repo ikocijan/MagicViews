@@ -3,8 +3,10 @@ package com.ivankocijan.magicviews.views;
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.TypefacePreference;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.preference.EditTextPreference;
 import android.util.AttributeSet;
 import android.view.View;
@@ -17,18 +19,25 @@ public class MagicEditTextPreference extends EditTextPreference implements Typef
     private MagicPreferenceDelegate delegate;
 
     public MagicEditTextPreference(Context context) {
-        this(context, null);
+        super(context);
+        init(null);
     }
 
     public MagicEditTextPreference(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
-    }
-
-    public MagicEditTextPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+        super(context, attrs);
         init(attrs);
     }
 
+    public MagicEditTextPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public MagicEditTextPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(attrs);
+    }
 
     private void init(AttributeSet attrs) {
         this.delegate = new MagicPreferenceDelegate();
@@ -48,7 +57,9 @@ public class MagicEditTextPreference extends EditTextPreference implements Typef
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        delegate.onBindView(view);
+        if (!view.isInEditMode()) {
+            delegate.onBindView(view);
+        }
     }
 
     @Override

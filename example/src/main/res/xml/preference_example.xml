@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.ivankocijan.magicviews.views.MagicPreferenceCategory
+            android:title="Custom font prefs"
+            app:prefCategoryTitleTypeFace="Ubuntu-RI.ttf">
+
+        <com.ivankocijan.magicviews.views.MagicPreference
+                android:title="Preference"
+                android:summary="Simple summary with character spacing"
+                app:prefTitleTypeFace="Ubuntu-B.ttf"
+                app:prefSummaryTypeFace="Ubuntu-L.ttf"
+                app:prefSummaryCharacterSpacing="1"/>
+
+        <com.ivankocijan.magicviews.views.MagicEditTextPreference
+                android:title="EditTextPreference"
+                android:summary="Editable text can have a custom font, too"
+                app:editTextPrefTitleTypeFace="Montserrat-Regular.ttf"
+                app:editTextPrefSummaryTypeFace="Montserrat-Thin.ttf"/>
+
+    </com.ivankocijan.magicviews.views.MagicPreferenceCategory>
+
+    <com.ivankocijan.magicviews.views.MagicPreferenceCategory
+            android:title="Default font prefs">
+
+        <com.ivankocijan.magicviews.views.MagicSwitchPreference
+                android:title="SwitchPreference"/>
+
+        <com.ivankocijan.magicviews.views.MagicCheckBoxPreference
+                android:title="CheckBoxPreference"
+                android:summary="Text in CheckBox pref takes a default font"/>
+
+    </com.ivankocijan.magicviews.views.MagicPreferenceCategory>
+
+</PreferenceScreen>

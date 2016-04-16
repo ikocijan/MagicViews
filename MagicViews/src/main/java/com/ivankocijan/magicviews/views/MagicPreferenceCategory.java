@@ -3,37 +3,50 @@ package com.ivankocijan.magicviews.views;
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.TypefacePreference;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.preference.PreferenceGroup;
+import android.os.Build;
+import android.preference.PreferenceCategory;
 import android.util.AttributeSet;
 import android.view.View;
 
 /**
  * Created by ivankocijan on 23.05.2014..
  */
-public class MagicPreferenceGroup extends PreferenceGroup implements TypefacePreference {
+public class MagicPreferenceCategory extends PreferenceCategory implements TypefacePreference {
 
     private MagicPreferenceDelegate delegate;
 
-    public MagicPreferenceGroup(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+    public MagicPreferenceCategory(Context context) {
+        super(context);
+        init(null);
     }
 
-    public MagicPreferenceGroup(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public MagicPreferenceCategory(Context context, AttributeSet attrs) {
+        super(context, attrs);
         init(attrs);
     }
 
+    public MagicPreferenceCategory(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public MagicPreferenceCategory(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
+        init(attrs);
+    }
 
     private void init(AttributeSet attrs) {
         this.delegate = new MagicPreferenceDelegate();
         if (attrs != null) {
-            TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicPreferenceGroup);
-            String titleTypeface = a.getString(R.styleable.MagicPreferenceGroup_prefGroupTitleTypeFace);
-            float titleCharacterSpacing = a.getFloat(R.styleable.MagicPreferenceGroup_prefGroupTitleCharacterSpacing, 0);
-            String summaryTypeface = a.getString(R.styleable.MagicPreferenceGroup_prefGroupSummaryTypeFace);
-            float summaryCharacterSpacing = a.getFloat(R.styleable.MagicPreferenceGroup_prefGroupSummaryCharacterSpacing, 0);
+            TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicPreferenceCategory);
+            String titleTypeface = a.getString(R.styleable.MagicPreferenceCategory_prefCategoryTitleTypeFace);
+            float titleCharacterSpacing = a.getFloat(R.styleable.MagicPreferenceCategory_prefCategoryTitleCharacterSpacing, 0);
+            String summaryTypeface = a.getString(R.styleable.MagicPreferenceCategory_prefCategorySummaryTypeFace);
+            float summaryCharacterSpacing = a.getFloat(R.styleable.MagicPreferenceCategory_prefCategorySummaryCharacterSpacing, 0);
             a.recycle();
 
             delegate.setAttributes(titleTypeface, titleCharacterSpacing,
@@ -44,7 +57,9 @@ public class MagicPreferenceGroup extends PreferenceGroup implements TypefacePre
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        delegate.onBindView(view);
+        if (!view.isInEditMode()) {
+            delegate.onBindView(view);
+        }
     }
 
     @Override

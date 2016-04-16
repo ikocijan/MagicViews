@@ -3,8 +3,10 @@ package com.ivankocijan.magicviews.views;
 import com.ivankocijan.magicviews.R;
 import com.ivankocijan.magicviews.TypefacePreference;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.preference.CheckBoxPreference;
 import android.util.AttributeSet;
 import android.view.View;
@@ -17,15 +19,23 @@ public class MagicCheckBoxPreference extends CheckBoxPreference implements Typef
     private MagicPreferenceDelegate delegate;
 
     public MagicCheckBoxPreference(Context context) {
-        this(context, null);
+        super(context);
+        init(null);
     }
 
     public MagicCheckBoxPreference(Context context, AttributeSet attrs) {
-        this(context, attrs, 0);
+        super(context, attrs);
+        init(attrs);
     }
 
-    public MagicCheckBoxPreference(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
+    public MagicCheckBoxPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(attrs);
+    }
+
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+    public MagicCheckBoxPreference(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        super(context, attrs, defStyleAttr, defStyleRes);
         init(attrs);
     }
 
@@ -47,7 +57,9 @@ public class MagicCheckBoxPreference extends CheckBoxPreference implements Typef
     @Override
     protected void onBindView(View view) {
         super.onBindView(view);
-        delegate.onBindView(view);
+        if (!view.isInEditMode()) {
+            delegate.onBindView(view);
+        }
     }
 
     @Override
