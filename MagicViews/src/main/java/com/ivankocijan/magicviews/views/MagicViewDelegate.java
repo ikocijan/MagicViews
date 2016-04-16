@@ -34,9 +34,9 @@ class MagicViewDelegate {
     public void setAttributes(AttributeSet attrs) {
 
         if (attrs != null) {
-            TypedArray a = this.magicView.getContext().obtainStyledAttributes(attrs, R.styleable.MagicTypeface);
-            String typeFace = a.getString(R.styleable.MagicTypeface_typeFace);
-            float letterSpacing = a.getFloat(R.styleable.MagicTypeface_letter_spacing, 0);
+            TypedArray a = this.magicView.getContext().obtainStyledAttributes(attrs, R.styleable.MagicFont);
+            String typeFace = a.getString(R.styleable.MagicFont_typeFace);
+            float letterSpacing = a.getFloat(R.styleable.MagicFont_letter_spacing, 0);
 
             applyTypeface(typeFace);
             applyLetterSpacing(letterSpacing);
@@ -51,6 +51,14 @@ class MagicViewDelegate {
         }
 
         this.magicView.setTypeface(MagicTypeface.INSTANCE.getTypeface(typeFace));
+    }
+
+    public void setLetterSpacing(float letterSpacing) {
+        if (letterSpacing < 0) {
+            throw new IllegalArgumentException("Value must be greater or equal to 0.");
+        }
+
+        applyLetterSpacing(letterSpacing);
     }
 
     private void applyTypeface(String typeFace) {

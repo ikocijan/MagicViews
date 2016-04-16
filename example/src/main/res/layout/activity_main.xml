@@ -25,7 +25,9 @@
         <com.ivankocijan.magicviews.views.MagicTabLayout
                 android:id="@+id/magic_tab_layout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                app:childrenTypeFace="LibreBaskerville-Regular.ttf"
+                app:childrenLetterSpacing="0.5"/>
 
     </android.support.design.widget.AppBarLayout>
 

@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="MagicTypeface">
+    <declare-styleable name="MagicFont">
         <attr name="typeFace" format="string"/>
         <attr name="letter_spacing" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="MagicTabLayout">
+        <attr name="childrenTypeFace" format="string"/>
+        <attr name="childrenLetterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicPreference">
