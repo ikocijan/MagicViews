@@ -23,7 +23,7 @@ class MagicViewDelegate {
 
     private final TextView magicView;
 
-    public MagicViewDelegate(@NonNull TextView magicView) {
+    MagicViewDelegate(@NonNull TextView magicView) {
         this.magicView = magicView;
     }
 

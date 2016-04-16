@@ -18,23 +18,38 @@
     </declare-styleable>
 
     <declare-styleable name="MagicPreference">
-        <attr name="prefTypeface" format="string"/>
+        <attr name="prefTitleTypeFace" format="string"/>
+        <attr name="prefTitleCharacterSpacing" format="float"/>
+        <attr name="prefSummaryTypeFace" format="string"/>
+        <attr name="prefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicSwitchPreference">
-        <attr name="switchPrefTypeface" format="string"/>
+        <attr name="switchPrefTitleTypeFace" format="string"/>
+        <attr name="switchPrefTitleCharacterSpacing" format="float"/>
+        <attr name="switchPrefSummaryTypeFace" format="string"/>
+        <attr name="switchPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicCheckBoxPreference">
-        <attr name="checkBoxTypeface" format="string"/>
+        <attr name="checkBoxPrefTitleTypeFace" format="string"/>
+        <attr name="checkBoxPrefTitleCharacterSpacing" format="float"/>
+        <attr name="checkBoxPrefSummaryTypeFace" format="string"/>
+        <attr name="checkBoxPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicPreferenceGroup">
-        <attr name="preferenceGroupTypeface" format="string"/>
+        <attr name="prefGroupTitleTypeFace" format="string"/>
+        <attr name="prefGroupTitleCharacterSpacing" format="float"/>
+        <attr name="prefGroupSummaryTypeFace" format="string"/>
+        <attr name="prefGroupSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicEditTextPreference">
-        <attr name="editTextTypeface" format="string"/>
+        <attr name="editTextPrefTitleTypeFace" format="string"/>
+        <attr name="editTextPrefTitleCharacterSpacing" format="float"/>
+        <attr name="editTextPrefSummaryTypeFace" format="string"/>
+        <attr name="editTextPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
 </resources>
