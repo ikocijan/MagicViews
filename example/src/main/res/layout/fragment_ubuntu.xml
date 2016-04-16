@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_horizontal_margin">
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="36sp"
+                android:gravity="center"
+                android:text="Ubuntu Typeface"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-B.ttf"
+                app:typeFace="Ubuntu-B.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-BI.ttf"
+                app:typeFace="Ubuntu-BI.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-C.ttf"
+                app:typeFace="Ubuntu-C.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-L.ttf"
+                app:typeFace="Ubuntu-L.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-LI.ttf"
+                app:typeFace="Ubuntu-LI.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-M.ttf"
+                app:typeFace="Ubuntu-M.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-MI.ttf"
+                app:typeFace="Ubuntu-MI.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-R.ttf"
+                app:typeFace="Ubuntu-R.ttf"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="Ubuntu-RI.ttf"
+                app:typeFace="Ubuntu-RI.ttf"/>
+
+    </LinearLayout>
+</ScrollView>
