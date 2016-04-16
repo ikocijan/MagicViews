@@ -14,6 +14,6 @@ public class MagicApp extends Application {
         super.onCreate();
 
         MagicViews.lateInit(getAssets(), "fonts");
-        MagicViews.setDefaultTypeFace("Ubuntu-M.ttf");
+        MagicViews.setDefaultTypeFace("Montserrat-Regular.ttf");
     }
 }

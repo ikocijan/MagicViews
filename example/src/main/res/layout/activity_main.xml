@@ -21,22 +21,15 @@
                 android:background="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:popupTheme="@style/AppTheme.PopupOverlay"/>
-        
-        <ViewStub
-                android:id="@+id/vs_tab"
-                android:layout="@layout/tab_layout"
-                android:inflatedId="@+id/tabs"
+
+        <com.ivankocijan.magicviews.views.MagicTabLayout
+                android:id="@+id/magic_tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
     </android.support.design.widget.AppBarLayout>
 
-    <ViewStub
-            android:id="@+id/vs_content"
-            android:inflatedId="@+id/content"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    <include layout="@layout/content_main" />
 
     <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"

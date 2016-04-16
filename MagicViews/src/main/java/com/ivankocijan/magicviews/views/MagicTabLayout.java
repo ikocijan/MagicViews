@@ -3,6 +3,7 @@ package com.ivankocijan.magicviews.views;
 import com.ivankocijan.magicviews.interfaces.MagicView;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.util.AttributeSet;
 import android.view.View;
@@ -57,7 +58,11 @@ public class MagicTabLayout extends TabLayout implements MagicView {
                 }
             }
         }
+    }
 
-
+    @NonNull
+    @Override
+    public Tab newTab() {
+        return super.newTab();
     }
 }
