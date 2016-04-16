@@ -15,15 +15,15 @@ public final class MagicViews {
         throw new AssertionError("Cannot be instantiated.");
     }
 
-    public static void lazyInit(AssetManager am, String fontDirectoryPath) {
+    public static void lateInit(AssetManager am, String typefaceDirectoryPath) {
         if (am == null) {
             throw new RuntimeException("AssetManager must not be null.");
         }
         MagicTypeface.INSTANCE.setAssetManager(am);
-        MagicTypeface.INSTANCE.setTypefaceDirectory(fontDirectoryPath);
+        MagicTypeface.INSTANCE.setTypefaceDirectory(typefaceDirectoryPath);
     }
 
-    public static void init(AssetManager am, String fontDirectoryPath) {
+    public static void init(AssetManager am, String typefaceDirectoryPath) {
 
     }
 
