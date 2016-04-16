@@ -14,13 +14,14 @@
             android:layout_width="match_parent"
             android:theme="@style/AppTheme.AppBarOverlay">
 
-        <android.support.v7.widget.Toolbar
+        <com.ivankocijan.magicviews.views.MagicToolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
-                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                app:subtitleTypeFace="LibreBaskerville-Italic.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicTabLayout
                 android:id="@+id/magic_tab_layout"

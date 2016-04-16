@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_toolbar_title" type="id"/>
+    <item name="tv_toolbar_subtitle" type="id"/>
+</resources>

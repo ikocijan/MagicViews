@@ -8,7 +8,6 @@ import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.TextUtils;
 import android.text.style.ScaleXSpan;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -38,30 +37,14 @@ class MagicViewDelegate {
             String typeFace = a.getString(R.styleable.MagicFont_typeFace);
             float letterSpacing = a.getFloat(R.styleable.MagicFont_letter_spacing, 0);
 
-            applyTypeface(typeFace);
-            applyLetterSpacing(letterSpacing);
+            setTypeface(typeFace);
+            setLetterSpacing(letterSpacing);
 
             a.recycle();
         }
     }
 
-    public void setTypeface(@NonNull String typeFace) {
-        if (TextUtils.isEmpty(typeFace)) {
-            throw new RuntimeException("TypeFace must not be null or an empty string.");
-        }
-
-        this.magicView.setTypeface(MagicTypeface.INSTANCE.getTypeface(typeFace));
-    }
-
-    public void setLetterSpacing(float letterSpacing) {
-        if (letterSpacing < 0) {
-            throw new IllegalArgumentException("Value must be greater or equal to 0.");
-        }
-
-        applyLetterSpacing(letterSpacing);
-    }
-
-    private void applyTypeface(String typeFace) {
+    public void setTypeface(String typeFace) {
         if (typeFace == null) {
             typeFace = MagicViews.getDefaultTypeFace();
 
@@ -73,7 +56,7 @@ class MagicViewDelegate {
         this.magicView.setTypeface(MagicTypeface.INSTANCE.getTypeface(typeFace));
     }
 
-    private void applyLetterSpacing(float letterSpacing) {
+    public void setLetterSpacing(float letterSpacing) {
         if (letterSpacing != 0) {
             String originalText = this.magicView.getText().toString();
 

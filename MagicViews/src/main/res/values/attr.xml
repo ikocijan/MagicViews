@@ -10,6 +10,13 @@
         <attr name="childrenLetterSpacing" format="float"/>
     </declare-styleable>
 
+    <declare-styleable name="MagicToolbar">
+        <attr name="titleTypeFace" format="string"/>
+        <attr name="titleLetterSpacing" format="float"/>
+        <attr name="subtitleTypeFace" format="string"/>
+        <attr name="subtitleLetterSpacing" format="float"/>
+    </declare-styleable>
+
     <declare-styleable name="MagicPreference">
         <attr name="prefTypeface" format="string"/>
     </declare-styleable>

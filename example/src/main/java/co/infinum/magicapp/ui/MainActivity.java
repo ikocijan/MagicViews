@@ -1,13 +1,13 @@
 package co.infinum.magicapp.ui;
 
 import com.ivankocijan.magicviews.views.MagicTabLayout;
+import com.ivankocijan.magicviews.views.MagicToolbar;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import butterknife.Bind;
@@ -22,7 +22,7 @@ import co.infinum.magicapp.ui.fragment.UbuntuMonoFragment;
 public class MainActivity extends AppCompatActivity {
 
     @Bind(R.id.toolbar)
-    protected Toolbar toolbar;
+    protected MagicToolbar toolbar;
 
     @Bind(R.id.magic_tab_layout)
     protected MagicTabLayout tabLayout;
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbar);
+        toolbar.setSubtitle(R.string.main_subtitle);
         SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager())
                 .add(new PagerItem() {
                     @Override
