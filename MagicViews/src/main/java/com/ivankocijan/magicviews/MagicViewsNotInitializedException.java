@@ -10,4 +10,8 @@ public class MagicViewsNotInitializedException extends RuntimeException {
     public MagicViewsNotInitializedException(String detailMessage) {
         super(detailMessage);
     }
+
+    public MagicViewsNotInitializedException(String detailMessage, Throwable throwable) {
+        super(detailMessage, throwable);
+    }
 }

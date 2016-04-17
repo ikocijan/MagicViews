@@ -2,6 +2,8 @@ package com.ivankocijan.magicviews;
 
 import android.content.res.AssetManager;
 
+import java.io.IOException;
+
 /**
  * @author Koc
  *         ivan.kocijan@infinum.hr
@@ -24,7 +26,16 @@ public final class MagicViews {
     }
 
     public static void init(AssetManager am, String typefaceDirectoryPath) {
-
+        if (am == null) {
+            throw new RuntimeException("AssetManager must not be null.");
+        }
+        MagicTypeface.INSTANCE.setAssetManager(am);
+        MagicTypeface.INSTANCE.setTypefaceDirectory(typefaceDirectoryPath);
+        try {
+            MagicTypeface.INSTANCE.initAll();
+        } catch (IOException e) {
+            throw new MagicViewsNotInitializedException("MagicViews failed to initialize with IOException", e);
+        }
     }
 
     /**

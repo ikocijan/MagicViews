@@ -2,7 +2,9 @@ package com.ivankocijan.magicviews;
 
 import android.content.res.AssetManager;
 import android.graphics.Typeface;
+import android.util.Log;
 
+import java.io.IOException;
 import java.util.Hashtable;
 
 /**
@@ -23,9 +25,9 @@ public enum MagicTypeface {
      * requested font
      */
     public Typeface getTypeface(String typeface) {
-        if (typefaceDirectoryPath == null || typefaceDirectoryPath.isEmpty()) {
+        if (typefaceDirectoryPath == null) {
             throw new MagicViewsNotInitializedException(
-                    "Typeface directory path is empty. Please initialize MagicViews from your application class.");
+                    "Typeface directory path is not set. Initialize MagicViews from your application class.");
         }
 
         if (!fonts.containsKey(typeface)) {
@@ -37,11 +39,25 @@ public enum MagicTypeface {
     }
 
     protected void setTypefaceDirectory(String dirPath) {
+        if (dirPath == null) {
+            throw new RuntimeException("Font directory path must not be null.");
+        }
         this.typefaceDirectoryPath = dirPath;
     }
 
     protected void setAssetManager(AssetManager assetManager) {
+        if (this.assetManager != null) {
+            throw new RuntimeException("MagicViews already initialized.");
+        }
         this.assetManager = assetManager;
+    }
+
+    protected void initAll() throws IOException {
+        String[] assets = assetManager.list(this.typefaceDirectoryPath);
+        for (String asset : assets) {
+            Log.d(this.getClass().getSimpleName(), "asset: -> " + asset);
+            initializeFont(asset);
+        }
     }
 
     /**
