@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefacePreference;
+import com.ivankocijan.magicviews.FontPreference;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.view.View;
 /**
  * Created by ivankocijan on 22.05.2014..
  */
-public class MagicCheckBoxPreference extends CheckBoxPreference implements TypefacePreference {
+public class MagicCheckBoxPreference extends CheckBoxPreference implements FontPreference {
 
     private MagicPreferenceDelegate delegate;
 
@@ -43,14 +43,14 @@ public class MagicCheckBoxPreference extends CheckBoxPreference implements Typef
         this.delegate = new MagicPreferenceDelegate();
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicCheckBoxPreference);
-            String titleTypeface = a.getString(R.styleable.MagicCheckBoxPreference_checkBoxPrefTitleTypeFace);
+            String titleFontName = a.getString(R.styleable.MagicCheckBoxPreference_checkBoxPrefTitleFont);
             float titleCharacterSpacing = a.getFloat(R.styleable.MagicCheckBoxPreference_checkBoxPrefTitleCharacterSpacing, 0);
-            String summaryTypeface = a.getString(R.styleable.MagicCheckBoxPreference_checkBoxPrefSummaryTypeFace);
+            String summaryFontName = a.getString(R.styleable.MagicCheckBoxPreference_checkBoxPrefSummaryFont);
             float summaryCharacterSpacing = a.getFloat(R.styleable.MagicCheckBoxPreference_checkBoxPrefSummaryCharacterSpacing, 0);
             a.recycle();
 
-            delegate.setAttributes(titleTypeface, titleCharacterSpacing,
-                    summaryTypeface, summaryCharacterSpacing);
+            delegate.setAttributes(titleFontName, titleCharacterSpacing,
+                    summaryFontName, summaryCharacterSpacing);
         }
     }
 
@@ -63,8 +63,8 @@ public class MagicCheckBoxPreference extends CheckBoxPreference implements Typef
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
-        delegate.setTypeface(typeFaceName);
+    public void setFont(String fontName) {
+        delegate.setFont(fontName);
     }
 
     @Override
@@ -73,8 +73,8 @@ public class MagicCheckBoxPreference extends CheckBoxPreference implements Typef
     }
 
     @Override
-    public void setTitleTypeface(String typeface) {
-        delegate.setTitleTypeface(typeface);
+    public void setTitleFont(String fontName) {
+        delegate.setTitleFont(fontName);
     }
 
     @Override
@@ -83,8 +83,8 @@ public class MagicCheckBoxPreference extends CheckBoxPreference implements Typef
     }
 
     @Override
-    public void setSummaryTypeface(String typeface) {
-        delegate.setSummaryTypeface(typeface);
+    public void setSummaryFont(String fontName) {
+        delegate.setSummaryFont(fontName);
     }
 
     @Override

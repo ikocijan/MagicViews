@@ -8,18 +8,18 @@ import android.widget.TextView;
  */
 class MagicPreferenceDelegate {
 
-    private String titleTypeface, summaryTypeface;
+    private String titleFontName, summaryFontName;
     private float titleCharacterSpacing, summaryCharacterSpacing;
     private MagicViewDelegate titleDelegate, summaryDelegate;
 
     MagicPreferenceDelegate() {
     }
 
-    public void setAttributes(String titleTypeface, float titleCharacterSpacing,
-            String summaryTypeface, float summaryCharacterSpacing) {
-        this.titleTypeface = titleTypeface;
+    public void setAttributes(String titleFontName, float titleCharacterSpacing,
+            String summaryFontName, float summaryCharacterSpacing) {
+        this.titleFontName = titleFontName;
         this.titleCharacterSpacing = titleCharacterSpacing;
-        this.summaryTypeface = summaryTypeface;
+        this.summaryFontName = summaryFontName;
         this.summaryCharacterSpacing = summaryCharacterSpacing;
     }
 
@@ -27,20 +27,20 @@ class MagicPreferenceDelegate {
         TextView titleView = (TextView) view.findViewById(android.R.id.title);
         if (titleView != null) {
             titleDelegate = new MagicViewDelegate(titleView);
-            titleDelegate.setTypeface(this.titleTypeface);
+            titleDelegate.setFont(this.titleFontName);
             titleDelegate.setCharacterSpacing(this.titleCharacterSpacing);
         }
         TextView summaryView = (TextView) view.findViewById(android.R.id.summary);
         if (summaryView != null) {
             summaryDelegate = new MagicViewDelegate(summaryView);
-            summaryDelegate.setTypeface(this.summaryTypeface);
+            summaryDelegate.setFont(this.summaryFontName);
             summaryDelegate.setCharacterSpacing(this.summaryCharacterSpacing);
         }
     }
 
-    public void setTypeface(String typeFaceName) {
-        setTitleTypeface(typeFaceName);
-        setSummaryTypeface(typeFaceName);
+    public void setFont(String fontName) {
+        setTitleFont(fontName);
+        setSummaryFont(fontName);
     }
 
     public void setCharacterSpacing(float characterSpacing) {
@@ -48,10 +48,10 @@ class MagicPreferenceDelegate {
         setSummaryCharacterSpacing(characterSpacing);
     }
 
-    public void setTitleTypeface(String typeface) {
-        this.titleTypeface = typeface;
+    public void setTitleFont(String fontName) {
+        this.titleFontName = fontName;
         if (titleDelegate != null) {
-            titleDelegate.setTypeface(typeface);
+            titleDelegate.setFont(fontName);
         }
     }
 
@@ -62,10 +62,10 @@ class MagicPreferenceDelegate {
         }
     }
 
-    public void setSummaryTypeface(String summaryTypeface) {
-        this.summaryTypeface = summaryTypeface;
+    public void setSummaryFont(String fontName) {
+        this.summaryFontName = fontName;
         if (summaryDelegate != null) {
-            summaryDelegate.setTypeface(summaryTypeface);
+            summaryDelegate.setFont(fontName);
         }
     }
 

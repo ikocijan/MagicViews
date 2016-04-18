@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefacePreference;
+import com.ivankocijan.magicviews.FontPreference;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.view.View;
 /**
  * Created by ivankocijan on 23.05.2014..
  */
-public class MagicPreferenceCategory extends PreferenceCategory implements TypefacePreference {
+public class MagicPreferenceCategory extends PreferenceCategory implements FontPreference {
 
     private MagicPreferenceDelegate delegate;
 
@@ -43,14 +43,11 @@ public class MagicPreferenceCategory extends PreferenceCategory implements Typef
         this.delegate = new MagicPreferenceDelegate();
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicPreferenceCategory);
-            String titleTypeface = a.getString(R.styleable.MagicPreferenceCategory_prefCategoryTitleTypeFace);
+            String titleFontName = a.getString(R.styleable.MagicPreferenceCategory_prefCategoryTitleFont);
             float titleCharacterSpacing = a.getFloat(R.styleable.MagicPreferenceCategory_prefCategoryTitleCharacterSpacing, 0);
-            String summaryTypeface = a.getString(R.styleable.MagicPreferenceCategory_prefCategorySummaryTypeFace);
-            float summaryCharacterSpacing = a.getFloat(R.styleable.MagicPreferenceCategory_prefCategorySummaryCharacterSpacing, 0);
             a.recycle();
 
-            delegate.setAttributes(titleTypeface, titleCharacterSpacing,
-                    summaryTypeface, summaryCharacterSpacing);
+            delegate.setAttributes(titleFontName, titleCharacterSpacing, null, 0);
         }
     }
 
@@ -63,8 +60,8 @@ public class MagicPreferenceCategory extends PreferenceCategory implements Typef
     }
 
     @Override
-    public void setTitleTypeface(String typeface) {
-        delegate.setTitleTypeface(typeface);
+    public void setTitleFont(String fontName) {
+        delegate.setTitleFont(fontName);
     }
 
     @Override
@@ -73,8 +70,8 @@ public class MagicPreferenceCategory extends PreferenceCategory implements Typef
     }
 
     @Override
-    public void setSummaryTypeface(String typeface) {
-        delegate.setSummaryTypeface(typeface);
+    public void setSummaryFont(String fontName) {
+        delegate.setSummaryFont(fontName);
     }
 
     @Override
@@ -83,8 +80,8 @@ public class MagicPreferenceCategory extends PreferenceCategory implements Typef
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
-        delegate.setTypeface(typeFaceName);
+    public void setFont(String fontName) {
+        delegate.setFont(fontName);
     }
 
     @Override

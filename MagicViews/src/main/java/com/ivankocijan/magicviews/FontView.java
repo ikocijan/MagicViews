@@ -5,9 +5,9 @@ package com.ivankocijan.magicviews;
  *         ivan.kocijan@infinum.hr
  * @since 23.05.15.
  */
-public interface TypefaceView {
+public interface FontView {
 
-    void setTypeface(String typeFaceName);
+    void setFont(String fontName);
     void setCharacterSpacing(float characterSpacing);
 
 }

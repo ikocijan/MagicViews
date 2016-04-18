@@ -33,26 +33,26 @@ class MagicViewDelegate {
 
         if (attrs != null) {
             TypedArray a = this.magicView.getContext().obtainStyledAttributes(attrs, R.styleable.MagicFont);
-            String typeFace = a.getString(R.styleable.MagicFont_typeFace);
+            String fontName = a.getString(R.styleable.MagicFont_font);
             float characterSpacing = a.getFloat(R.styleable.MagicFont_characterSpacing, 0);
 
-            setTypeface(typeFace);
+            setFont(fontName);
             setCharacterSpacing(characterSpacing);
 
             a.recycle();
         }
     }
 
-    public void setTypeface(String typeFace) {
-        if (typeFace == null) {
-            typeFace = MagicViews.INSTANCE.getDefaultTypeFace();
+    public void setFont(String fontName) {
+        if (fontName == null) {
+            fontName = MagicViews.INSTANCE.getDefaultFontName();
 
-            if (typeFace == null) {
+            if (fontName == null) {
                 return;
             }
         }
 
-        this.magicView.setTypeface(MagicViews.INSTANCE.getTypeface(typeFace));
+        this.magicView.setTypeface(MagicViews.INSTANCE.getFont(fontName));
     }
 
     public void setCharacterSpacing(float characterSpacing) {

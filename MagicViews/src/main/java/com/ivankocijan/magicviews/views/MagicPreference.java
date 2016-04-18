@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefacePreference;
+import com.ivankocijan.magicviews.FontPreference;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -14,7 +14,7 @@ import android.view.View;
 /**
  * Created by ivankocijan on 22.05.2014..
  */
-public class MagicPreference extends Preference implements TypefacePreference {
+public class MagicPreference extends Preference implements FontPreference {
 
     private MagicPreferenceDelegate delegate;
 
@@ -43,14 +43,14 @@ public class MagicPreference extends Preference implements TypefacePreference {
         this.delegate = new MagicPreferenceDelegate();
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicPreference);
-            String titleTypeface = a.getString(R.styleable.MagicPreference_prefTitleTypeFace);
+            String titleFontName = a.getString(R.styleable.MagicPreference_prefTitleFont);
             float titleCharacterSpacing = a.getFloat(R.styleable.MagicPreference_prefTitleCharacterSpacing, 0);
-            String summaryTypeface = a.getString(R.styleable.MagicPreference_prefSummaryTypeFace);
+            String summaryFontName = a.getString(R.styleable.MagicPreference_prefSummaryFont);
             float summaryCharacterSpacing = a.getFloat(R.styleable.MagicPreference_prefSummaryCharacterSpacing, 0);
             a.recycle();
 
-            delegate.setAttributes(titleTypeface, titleCharacterSpacing,
-                    summaryTypeface, summaryCharacterSpacing);
+            delegate.setAttributes(titleFontName, titleCharacterSpacing,
+                    summaryFontName, summaryCharacterSpacing);
         }
     }
 
@@ -63,8 +63,8 @@ public class MagicPreference extends Preference implements TypefacePreference {
     }
 
     @Override
-    public void setTitleTypeface(String typeface) {
-        delegate.setTitleTypeface(typeface);
+    public void setTitleFont(String fontName) {
+        delegate.setTitleFont(fontName);
     }
 
     @Override
@@ -73,8 +73,8 @@ public class MagicPreference extends Preference implements TypefacePreference {
     }
 
     @Override
-    public void setSummaryTypeface(String typeface) {
-        delegate.setSummaryTypeface(typeface);
+    public void setSummaryFont(String fontName) {
+        delegate.setSummaryFont(fontName);
     }
 
     @Override
@@ -83,8 +83,8 @@ public class MagicPreference extends Preference implements TypefacePreference {
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
-        delegate.setTypeface(typeFaceName);
+    public void setFont(String fontName) {
+        delegate.setFont(fontName);
     }
 
     @Override

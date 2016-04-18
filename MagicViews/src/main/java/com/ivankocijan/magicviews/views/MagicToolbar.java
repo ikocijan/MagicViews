@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefaceView;
+import com.ivankocijan.magicviews.FontView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,10 +15,10 @@ import android.widget.TextView;
 /**
  * Created by jmarkovic on 16/04/16.
  */
-public class MagicToolbar extends Toolbar implements TypefaceView {
+public class MagicToolbar extends Toolbar implements FontView {
 
     private SparseArray<MagicViewDelegate> delegates = new SparseArray<>();
-    private String titleTypeFace, subtitleTypeFace;
+    private String titleFontName, subtitleFontName;
     private float titleCharacterSpacing, subtitleCharacterSpacing;
 
     public MagicToolbar(Context context) {
@@ -37,9 +37,9 @@ public class MagicToolbar extends Toolbar implements TypefaceView {
     private void init(AttributeSet attrs) {
         if (attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicToolbar);
-            this.titleTypeFace = a.getString(R.styleable.MagicToolbar_titleTypeFace);
+            this.titleFontName = a.getString(R.styleable.MagicToolbar_titleFont);
             this.titleCharacterSpacing = a.getFloat(R.styleable.MagicToolbar_titleCharacterSpacing, 0);
-            this.subtitleTypeFace = a.getString(R.styleable.MagicToolbar_subtitleTypeFace);
+            this.subtitleFontName = a.getString(R.styleable.MagicToolbar_subtitleFont);
             this.subtitleCharacterSpacing = a.getFloat(R.styleable.MagicToolbar_subtitleCharacterSpacing, 0);
             a.recycle();
         }
@@ -63,7 +63,7 @@ public class MagicToolbar extends Toolbar implements TypefaceView {
             }
         }
         if (delegate != null) {
-            delegate.setTypeface(this.titleTypeFace);
+            delegate.setFont(this.titleFontName);
             delegate.setCharacterSpacing(this.titleCharacterSpacing);
         }
     }
@@ -86,15 +86,15 @@ public class MagicToolbar extends Toolbar implements TypefaceView {
             }
         }
         if (delegate != null) {
-            delegate.setTypeface(this.subtitleTypeFace);
+            delegate.setFont(this.subtitleFontName);
             delegate.setCharacterSpacing(this.subtitleCharacterSpacing);
         }
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
-        setTitleTypeFace(typeFaceName);
-        setSubtitleTypeFace(typeFaceName);
+    public void setFont(String fontName) {
+        setTitleFont(fontName);
+        setSubtitleFont(fontName);
     }
 
     @Override
@@ -103,19 +103,19 @@ public class MagicToolbar extends Toolbar implements TypefaceView {
         setSubtitleCharacterSpacing(characterSpacing);
     }
 
-    public void setTitleTypeFace(String titleTypeFace) {
-        this.titleTypeFace = titleTypeFace;
+    public void setTitleFont(String fontName) {
+        this.titleFontName = fontName;
         final MagicViewDelegate delegate = delegates.get(R.id.tv_toolbar_title);
         if (delegate != null) {
-            delegate.setTypeface(titleTypeFace);
+            delegate.setFont(fontName);
         }
     }
 
-    public void setSubtitleTypeFace(String subtitleTypeFace) {
-        this.subtitleTypeFace = subtitleTypeFace;
+    public void setSubtitleFont(String subtitleFont) {
+        this.subtitleFontName = subtitleFont;
         final MagicViewDelegate delegate = delegates.get(R.id.tv_toolbar_subtitle);
         if (delegate != null) {
-            delegate.setTypeface(subtitleTypeFace);
+            delegate.setFont(subtitleFont);
         }
     }
 

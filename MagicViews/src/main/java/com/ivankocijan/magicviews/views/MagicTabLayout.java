@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefaceView;
+import com.ivankocijan.magicviews.FontView;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -22,11 +22,11 @@ import java.util.List;
  *         ivan.kocijan@infinum.hr
  * @since 11/10/15
  */
-public class MagicTabLayout extends TabLayout implements TypefaceView {
+public class MagicTabLayout extends TabLayout implements FontView {
 
     private Field tabViewField;
     private List<MagicViewDelegate> delegates = new ArrayList<>();
-    private String childrenTypeFace;
+    private String tabsFontName;
     private float childrenCharacterSpacing;
 
     public MagicTabLayout(Context context) {
@@ -45,7 +45,7 @@ public class MagicTabLayout extends TabLayout implements TypefaceView {
     private void init(AttributeSet attrs) {
         if (!isInEditMode() && attrs != null) {
             TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.MagicTabLayout);
-            this.childrenTypeFace = a.getString(R.styleable.MagicTabLayout_childrenTypeFace);
+            this.tabsFontName = a.getString(R.styleable.MagicTabLayout_childrenFont);
             this.childrenCharacterSpacing = a.getFloat(R.styleable.MagicTabLayout_childrenCharacterSpacing, 0);
             a.recycle();
         }
@@ -53,16 +53,16 @@ public class MagicTabLayout extends TabLayout implements TypefaceView {
 
     private void createDelegate(TextView textView) {
         MagicViewDelegate delegate = new MagicViewDelegate(textView);
-        delegate.setTypeface(this.childrenTypeFace);
+        delegate.setFont(this.tabsFontName);
         delegate.setCharacterSpacing(this.childrenCharacterSpacing);
         delegates.add(delegate);
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
+    public void setFont(String fontName) {
         final int childCount = delegates.size();
         for (int i = 0; i < childCount; i++) {
-            delegates.get(i).setTypeface(typeFaceName);
+            delegates.get(i).setFont(fontName);
         }
     }
 

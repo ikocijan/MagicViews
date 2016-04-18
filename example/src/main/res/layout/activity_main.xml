@@ -21,13 +21,13 @@
                 android:background="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|enterAlways|snap"
                 app:popupTheme="@style/AppTheme.PopupOverlay"
-                app:subtitleTypeFace="LibreBaskerville-Italic.ttf"/>
+                app:subtitleFont="LibreBaskerville-Italic.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicTabLayout
                 android:id="@+id/magic_tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:childrenTypeFace="LibreBaskerville-Regular.ttf"
+                app:childrenFont="LibreBaskerville-Regular.ttf"
                 app:childrenCharacterSpacing="0.5"/>
 
     </android.support.design.widget.AppBarLayout>

@@ -5,20 +5,20 @@
 
     <com.ivankocijan.magicviews.views.MagicPreferenceCategory
             android:title="Custom font prefs"
-            app:prefCategoryTitleTypeFace="Ubuntu-RI.ttf">
+            app:prefCategoryTitleFont="Ubuntu-RI.ttf">
 
         <com.ivankocijan.magicviews.views.MagicPreference
                 android:title="Preference"
                 android:summary="Simple summary with character spacing"
-                app:prefTitleTypeFace="Ubuntu-B.ttf"
-                app:prefSummaryTypeFace="Ubuntu-L.ttf"
+                app:prefTitleFont="Ubuntu-B.ttf"
+                app:prefSummaryFont="Ubuntu-L.ttf"
                 app:prefSummaryCharacterSpacing="1"/>
 
         <com.ivankocijan.magicviews.views.MagicEditTextPreference
                 android:title="EditTextPreference"
                 android:summary="Editable text can have a custom font, too"
-                app:editTextPrefTitleTypeFace="Montserrat-Regular.ttf"
-                app:editTextPrefSummaryTypeFace="Montserrat-Thin.ttf"/>
+                app:editTextPrefTitleFont="Montserrat-Regular.ttf"
+                app:editTextPrefSummaryFont="Montserrat-Thin.ttf"/>
 
     </com.ivankocijan.magicviews.views.MagicPreferenceCategory>
 

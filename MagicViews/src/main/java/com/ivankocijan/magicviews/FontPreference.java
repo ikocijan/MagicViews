@@ -3,11 +3,11 @@ package com.ivankocijan.magicviews;
 /**
  * Created by jmarkovic on 16/04/16.
  */
-public interface TypefacePreference extends TypefaceView {
+public interface FontPreference extends FontView {
 
-    void setTitleTypeface(String typeface);
+    void setTitleFont(String fontName);
     void setTitleCharacterSpacing(float characterSpacing);
-    void setSummaryTypeface(String typeface);
+    void setSummaryFont(String fontName);
     void setSummaryCharacterSpacing(float characterSpacing);
 
 }

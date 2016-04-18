@@ -1,54 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="MagicFont">
-        <attr name="typeFace" format="string"/>
+        <attr name="font" format="string"/>
         <attr name="characterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicTabLayout">
-        <attr name="childrenTypeFace" format="string"/>
+        <attr name="childrenFont" format="string"/>
         <attr name="childrenCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicToolbar">
-        <attr name="titleTypeFace" format="string"/>
+        <attr name="titleFont" format="string"/>
         <attr name="titleCharacterSpacing" format="float"/>
-        <attr name="subtitleTypeFace" format="string"/>
+        <attr name="subtitleFont" format="string"/>
         <attr name="subtitleCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicPreference">
-        <attr name="prefTitleTypeFace" format="string"/>
+        <attr name="prefTitleFont" format="string"/>
         <attr name="prefTitleCharacterSpacing" format="float"/>
-        <attr name="prefSummaryTypeFace" format="string"/>
+        <attr name="prefSummaryFont" format="string"/>
         <attr name="prefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicSwitchPreference">
-        <attr name="switchPrefTitleTypeFace" format="string"/>
+        <attr name="switchPrefTitleFont" format="string"/>
         <attr name="switchPrefTitleCharacterSpacing" format="float"/>
-        <attr name="switchPrefSummaryTypeFace" format="string"/>
+        <attr name="switchPrefSummaryFont" format="string"/>
         <attr name="switchPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicCheckBoxPreference">
-        <attr name="checkBoxPrefTitleTypeFace" format="string"/>
+        <attr name="checkBoxPrefTitleFont" format="string"/>
         <attr name="checkBoxPrefTitleCharacterSpacing" format="float"/>
-        <attr name="checkBoxPrefSummaryTypeFace" format="string"/>
+        <attr name="checkBoxPrefSummaryFont" format="string"/>
         <attr name="checkBoxPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicPreferenceCategory">
-        <attr name="prefCategoryTitleTypeFace" format="string"/>
+        <attr name="prefCategoryTitleFont" format="string"/>
         <attr name="prefCategoryTitleCharacterSpacing" format="float"/>
-        <attr name="prefCategorySummaryTypeFace" format="string"/>
-        <attr name="prefCategorySummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 
     <declare-styleable name="MagicEditTextPreference">
-        <attr name="editTextPrefTitleTypeFace" format="string"/>
+        <attr name="editTextPrefTitleFont" format="string"/>
         <attr name="editTextPrefTitleCharacterSpacing" format="float"/>
-        <attr name="editTextPrefSummaryTypeFace" format="string"/>
+        <attr name="editTextPrefSummaryFont" format="string"/>
         <attr name="editTextPrefSummaryCharacterSpacing" format="float"/>
     </declare-styleable>
 

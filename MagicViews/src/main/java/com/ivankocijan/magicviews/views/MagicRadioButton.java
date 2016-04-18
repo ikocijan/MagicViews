@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefaceView;
+import com.ivankocijan.magicviews.FontView;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatRadioButton;
@@ -12,7 +12,7 @@ import android.util.AttributeSet;
  *         ivan.kocijan@infinum.hr
  * @since 23.05.15.
  */
-public class MagicRadioButton extends AppCompatRadioButton implements TypefaceView {
+public class MagicRadioButton extends AppCompatRadioButton implements FontView {
 
     private MagicViewDelegate delegate;
 
@@ -37,8 +37,8 @@ public class MagicRadioButton extends AppCompatRadioButton implements TypefaceVi
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
-        delegate.setTypeface(typeFaceName);
+    public void setFont(String fontName) {
+        delegate.setFont(fontName);
     }
 
     @Override

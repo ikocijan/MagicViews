@@ -27,7 +27,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="UbuntuMono-B.ttf"
-                app:typeFace="UbuntuMono-B.ttf"/>
+                app:font="UbuntuMono-B.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicTextView
                 android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="UbuntuMono-BI.ttf"
-                app:typeFace="UbuntuMono-BI.ttf"/>
+                app:font="UbuntuMono-BI.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicTextView
                 android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="UbuntuMono-R.ttf"
-                app:typeFace="UbuntuMono-R.ttf"/>
+                app:font="UbuntuMono-R.ttf"/>
 
         <com.ivankocijan.magicviews.views.MagicTextView
                 android:layout_width="match_parent"
@@ -57,7 +57,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:text="UbuntuMono-RI.ttf"
-                app:typeFace="UbuntuMono-RI.ttf"/>
+                app:font="UbuntuMono-RI.ttf"/>
 
     </LinearLayout>
 </ScrollView>

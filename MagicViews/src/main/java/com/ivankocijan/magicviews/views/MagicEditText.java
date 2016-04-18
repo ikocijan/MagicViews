@@ -1,7 +1,7 @@
 package com.ivankocijan.magicviews.views;
 
 import com.ivankocijan.magicviews.R;
-import com.ivankocijan.magicviews.TypefaceView;
+import com.ivankocijan.magicviews.FontView;
 
 import android.content.Context;
 import android.support.v7.widget.AppCompatEditText;
@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 /**
  * Created by ivankocijan on 18.05.2014..
  */
-public class MagicEditText extends AppCompatEditText implements TypefaceView {
+public class MagicEditText extends AppCompatEditText implements FontView {
 
     private MagicViewDelegate delegate;
 
@@ -35,8 +35,8 @@ public class MagicEditText extends AppCompatEditText implements TypefaceView {
     }
 
     @Override
-    public void setTypeface(String typeFaceName) {
-        delegate.setTypeface(typeFaceName);
+    public void setFont(String fontName) {
+        delegate.setFont(fontName);
     }
 
     @Override
