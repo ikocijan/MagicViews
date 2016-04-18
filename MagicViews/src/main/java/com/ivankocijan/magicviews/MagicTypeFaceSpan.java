@@ -18,7 +18,7 @@ public class MagicTypeFaceSpan extends TypefaceSpan {
 
     public MagicTypeFaceSpan(String typeface) {
         super("");
-        this.typeface = MagicTypeface.INSTANCE.getTypeface(typeface);
+        this.typeface = MagicViews.INSTANCE.getTypeface(typeface);
     }
 
     @Override

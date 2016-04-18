@@ -13,7 +13,6 @@ public class MagicApp extends Application {
     public void onCreate() {
         super.onCreate();
 
-        MagicViews.lateInit(getAssets(), "fonts");
-        MagicViews.setDefaultTypeFace("Montserrat-Regular.ttf");
+        MagicViews.init(getAssets(), "fonts").defaultFont("Montserrat-Regular.ttf");
     }
 }

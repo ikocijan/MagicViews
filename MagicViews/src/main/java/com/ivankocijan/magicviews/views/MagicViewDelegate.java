@@ -1,6 +1,5 @@
 package com.ivankocijan.magicviews.views;
 
-import com.ivankocijan.magicviews.MagicTypeface;
 import com.ivankocijan.magicviews.MagicViews;
 import com.ivankocijan.magicviews.R;
 
@@ -46,14 +45,14 @@ class MagicViewDelegate {
 
     public void setTypeface(String typeFace) {
         if (typeFace == null) {
-            typeFace = MagicViews.getDefaultTypeFace();
+            typeFace = MagicViews.INSTANCE.getDefaultTypeFace();
 
             if (typeFace == null) {
                 return;
             }
         }
 
-        this.magicView.setTypeface(MagicTypeface.INSTANCE.getTypeface(typeFace));
+        this.magicView.setTypeface(MagicViews.INSTANCE.getTypeface(typeFace));
     }
 
     public void setCharacterSpacing(float characterSpacing) {

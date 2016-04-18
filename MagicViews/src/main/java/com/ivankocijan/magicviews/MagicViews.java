@@ -1,48 +1,59 @@
 package com.ivankocijan.magicviews;
 
 import android.content.res.AssetManager;
+import android.graphics.Typeface;
+import android.util.Log;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 /**
  * @author Koc
  *         ivan.kocijan@infinum.hr
  * @since 19.12.14.
  */
-public final class MagicViews {
+public enum MagicViews {
 
-    private static String defaultTypeFace;
+    INSTANCE;
 
-    private MagicViews() {
-        throw new AssertionError("Cannot be instantiated.");
-    }
+    private AssetManager assetManager;
+    private final Hashtable<String, Typeface> fonts = new Hashtable<>();
+    private String typefaceDirectoryPath = null;
+    private String defaultTypeFace;
 
-    public static void lateInit(AssetManager am, String typefaceDirectoryPath) {
+    public static Initializer init(AssetManager am, String typefaceDirectoryPath) {
         if (am == null) {
             throw new RuntimeException("AssetManager must not be null.");
         }
-        MagicTypeface.INSTANCE.setAssetManager(am);
-        MagicTypeface.INSTANCE.setTypefaceDirectory(typefaceDirectoryPath);
+        return new Initializer(am, typefaceDirectoryPath);
     }
 
-    public static void init(AssetManager am, String typefaceDirectoryPath) {
-        if (am == null) {
-            throw new RuntimeException("AssetManager must not be null.");
+    /**
+     * Returns requested typeface. If this class is not initialized it will try to initialize it and return
+     * requested font
+     */
+    public Typeface getTypeface(String typeface) {
+        if (typefaceDirectoryPath == null) {
+            throw new MagicViewsNotInitializedException(
+                    "Typeface directory path is not set. Initialize MagicViews from your application class.");
         }
-        MagicTypeface.INSTANCE.setAssetManager(am);
-        MagicTypeface.INSTANCE.setTypefaceDirectory(typefaceDirectoryPath);
-        try {
-            MagicTypeface.INSTANCE.initAll();
-        } catch (IOException e) {
-            throw new MagicViewsNotInitializedException("MagicViews failed to initialize with IOException", e);
+
+        if (!fonts.containsKey(typeface)) {
+            initializeFont(typeface);
         }
+
+        return fonts.get(typeface);
+    }
+
+    public String getDefaultTypeFace() {
+        return this.defaultTypeFace;
     }
 
     /**
      * @param typeFace a default typeface to use if no typeface is set
      */
-    public static void setDefaultTypeFace(String typeFace) {
-        if (MagicTypeface.INSTANCE.getTypeface(typeFace) != null) {
+    protected void setDefaultTypeFace(String typeFace) {
+        if (getTypeface(typeFace) != null) {
             defaultTypeFace = typeFace;
         } else {
             throw new RuntimeException(String.format(
@@ -51,7 +62,65 @@ public final class MagicViews {
         }
     }
 
-    public static String getDefaultTypeFace() {
-        return defaultTypeFace;
+    protected void setTypefaceDirectory(String dirPath) {
+        if (dirPath == null) {
+            throw new RuntimeException("Font directory path must not be null.");
+        }
+        this.typefaceDirectoryPath = dirPath;
+    }
+
+    protected void setAssetManager(AssetManager assetManager) {
+        if (this.assetManager != null) {
+            throw new RuntimeException("MagicViews already initialized.");
+        }
+        this.assetManager = assetManager;
+    }
+
+    protected void initAll() throws IOException {
+        String[] assets = assetManager.list(this.typefaceDirectoryPath);
+        for (String asset : assets) {
+            Log.d(this.getClass().getSimpleName(), "asset: -> " + asset);
+            initializeFont(asset);
+        }
+    }
+
+    /**
+     * This method initializes font based on @typefaceDirectoryPath
+     *
+     * @param typeface typeface to set
+     */
+    private void initializeFont(String typeface) {
+        String fontPath = typefaceDirectoryPath + "/" + typeface;
+
+        //Font path can not start with / and it can not contain double slashes
+        fontPath = fontPath.replaceAll("//", "/");
+        if (fontPath.startsWith("/")) {
+            fontPath = fontPath.substring(1, fontPath.length());
+        }
+
+        Typeface font = Typeface.createFromAsset(assetManager, fontPath);
+        fonts.put(typeface, font);
+    }
+
+    public static class Initializer {
+
+        Initializer(AssetManager am, String fontDirPath) {
+            INSTANCE.setAssetManager(am);
+            INSTANCE.setTypefaceDirectory(fontDirPath);
+        }
+
+        public Initializer all() {
+            try {
+                INSTANCE.initAll();
+                return this;
+            } catch (IOException e) {
+                throw new MagicViewsNotInitializedException("MagicViews failed to initialize with IOException", e);
+            }
+        }
+
+        public Initializer defaultFont(String defaultFont) {
+            INSTANCE.setDefaultTypeFace(defaultFont);
+            return this;
+        }
     }
 }
