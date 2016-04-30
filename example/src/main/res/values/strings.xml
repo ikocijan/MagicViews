@@ -3,4 +3,27 @@
     <string name="main_subtitle">Font and typeface showoff</string>
     
     <string name="all_settings">Settings</string>
+    <string name="demo_previous">Previous</string>
+    <string name="demo_next">Next</string>
+    <string name="demolayout_description">Most common use case of MagicViews is to create a layout resource with custom views and custom properties, like this one.</string>
+    <string name="demo_autocompletetextview">AutoCompleteTextView</string>
+    <string name="demo_button">Button</string>
+    <string name="demo_checkbox">CheckBox</string>
+    <string name="demo_checkedtextview">CheckedTextView</string>
+    <string name="demo_edittext">EditText</string>
+    <string name="demo_multiautocompletetextview">MagicMultiAutoCompleteTextView</string>
+    <string name="demo_radiobutton_1">RadioButton 1</string>
+    <string name="demo_radiobutton_2">RadioButton 2</string>
+    <string name="demo_textview">TextView</string>
+
+    <string name="democode_description">Every MagicView can also be added to the layout from the code. Same properties can be set as in layout resource.</string>
+
+    <string name="demofontspan_description">Spans can be used to modify parts of the text. With MagicFontSpan, parts of the text can have different font. This can be applicable to both MagicViews and default views.</string>
+    <string name="demofontspan_magictextview">This is a MagicTextView. Even though font is set, it can be overridden by using MagicFontSpan.</string>
+    <string name="demofontspan_textview">This is a normal TextView. MagicFontSpan is not exclusive to MagicViews, it can also be used on normal views.</string>
+
+    <string name="democustomview_description">Just as any view, MagicViews can be used as part of other compound views. Using them does not break the preview.</string>
+    <string name="democustomview_label">Label:</string>
+
+    <string name="demowrapper_description">Views don\'t have to be declared as MagicViews in order to use fonts. They can be wrapped with MagicWrapper which gives them access to the same API. Views below are all normal Android views.</string>
 </resources>

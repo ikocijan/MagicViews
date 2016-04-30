@@ -20,6 +20,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.SettingsActivity"/>
+        <activity
+                android:name=".ui.DemoActivity"
+                android:windowSoftInputMode="stateHidden"/>
     </application>
 
 </manifest>

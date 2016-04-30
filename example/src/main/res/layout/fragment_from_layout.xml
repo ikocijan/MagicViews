@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_16"
+        android:fillViewport="true">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/demolayout_description"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space"/>
+
+        <com.ivankocijan.magicviews.views.MagicAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/demo_autocompletetextview"
+                app:font="Ubuntu-R.ttf"/>
+        
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+        
+        <com.ivankocijan.magicviews.views.MagicButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/demo_button"
+                app:font="Ubuntu-R.ttf"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+        
+        <com.ivankocijan.magicviews.views.MagicCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/demo_checkbox"
+                app:font="Ubuntu-R.ttf"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+
+        <com.ivankocijan.magicviews.views.MagicCheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:checked="true"
+                android:text="@string/demo_checkedtextview"
+                app:font="Ubuntu-R.ttf"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+
+        <com.ivankocijan.magicviews.views.MagicEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/demo_edittext"
+                app:font="Ubuntu-R.ttf"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+
+        <com.ivankocijan.magicviews.views.MagicMultiAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/demo_multiautocompletetextview"
+                app:font="Ubuntu-R.ttf"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+
+        <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <com.ivankocijan.magicviews.views.MagicRadioButton
+                    android:id="@+id/rb_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:checked="true"
+                    android:text="@string/demo_radiobutton_1"
+                    app:font="Ubuntu-R.ttf"/>
+
+            <com.ivankocijan.magicviews.views.MagicRadioButton
+                    android:id="@+id/rb_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/demo_radiobutton_2"
+                    app:font="Ubuntu-R.ttf"/>
+
+        </RadioGroup>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+
+        <com.ivankocijan.magicviews.views.MagicTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/demo_textview"
+                app:font="Ubuntu-R.ttf"/>
+
+        <android.support.v4.widget.Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_space_small"/>
+
+    </LinearLayout>
+</ScrollView>
