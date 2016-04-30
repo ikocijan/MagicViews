@@ -21,12 +21,12 @@
         <android.support.v4.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_space"/>
-        
+
         <com.ivankocijan.magicviews.views.MagicAutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/demolayout_autocompletetextview"
+                android:text="@string/demo_autocompletetextview"
                 app:font="Ubuntu-R.ttf"/>
         
         <android.support.v4.widget.Space
@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/demolayout_button"
+                android:text="@string/demo_button"
                 app:font="Ubuntu-R.ttf"/>
 
         <android.support.v4.widget.Space
@@ -48,19 +48,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/demolayout_checkbox"
+                android:text="@string/demo_checkbox"
                 app:font="Ubuntu-R.ttf"/>
 
         <android.support.v4.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/height_space_small"/>
 
-        <CheckedTextView
+        <com.ivankocijan.magicviews.views.MagicCheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:checked="true"
-                android:text="@string/demolayout_checkedtextview"/>
+                android:text="@string/demo_checkedtextview"
+                app:font="Ubuntu-R.ttf"/>
 
         <android.support.v4.widget.Space
                 android:layout_width="match_parent"
@@ -70,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/demolayout_edittext"
+                android:text="@string/demo_edittext"
                 app:font="Ubuntu-R.ttf"/>
 
         <android.support.v4.widget.Space
@@ -81,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/demolayout_magicmultiautocompletetextview"
+                android:text="@string/demo_multiautocompletetextview"
                 app:font="Ubuntu-R.ttf"/>
 
         <android.support.v4.widget.Space
@@ -98,7 +99,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:checked="true"
-                    android:text="@string/demolayout_radiobutton_1"
+                    android:text="@string/demo_radiobutton_1"
                     app:font="Ubuntu-R.ttf"/>
 
             <com.ivankocijan.magicviews.views.MagicRadioButton
@@ -106,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="@string/demolayout_radiobutton_2"
+                    android:text="@string/demo_radiobutton_2"
                     app:font="Ubuntu-R.ttf"/>
 
         </RadioGroup>
@@ -119,7 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/demolayout_textview"
+                android:text="@string/demo_textview"
                 app:font="Ubuntu-R.ttf"/>
 
         <android.support.v4.widget.Space

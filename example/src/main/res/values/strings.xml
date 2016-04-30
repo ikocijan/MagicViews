@@ -6,13 +6,15 @@
     <string name="demo_previous">Previous</string>
     <string name="demo_next">Next</string>
     <string name="demolayout_description">Most common use case of MagicViews is to create a layout resource with custom views and custom properties, like this one.</string>
-    <string name="demolayout_autocompletetextview">AutoCompleteTextView</string>
-    <string name="demolayout_button">Button</string>
-    <string name="demolayout_checkbox">CheckBox</string>
-    <string name="demolayout_checkedtextview">CheckedTextView</string>
-    <string name="demolayout_edittext">EditText</string>
-    <string name="demolayout_magicmultiautocompletetextview">MagicMultiAutoCompleteTextView</string>
-    <string name="demolayout_radiobutton_1">RadioButton 1</string>
-    <string name="demolayout_radiobutton_2">RadioButton 2</string>
-    <string name="demolayout_textview">TextView</string>
+    <string name="demo_autocompletetextview">AutoCompleteTextView</string>
+    <string name="demo_button">Button</string>
+    <string name="demo_checkbox">CheckBox</string>
+    <string name="demo_checkedtextview">CheckedTextView</string>
+    <string name="demo_edittext">EditText</string>
+    <string name="demo_multiautocompletetextview">MagicMultiAutoCompleteTextView</string>
+    <string name="demo_radiobutton_1">RadioButton 1</string>
+    <string name="demo_radiobutton_2">RadioButton 2</string>
+    <string name="demo_textview">TextView</string>
+
+    <string name="democode_description">Every MagicView can also be added to the layout from the code. Same properties can be set as in layout resource.</string>
 </resources>

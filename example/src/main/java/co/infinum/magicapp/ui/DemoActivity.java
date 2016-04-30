@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import co.infinum.magicapp.R;
+import co.infinum.magicapp.ui.fragment.demo.DemoFromCodeFragment;
 import co.infinum.magicapp.ui.fragment.demo.DemoLayoutFragment;
 
 /**
@@ -83,7 +84,7 @@ public class DemoActivity extends AppCompatActivity {
         FROM_CODE {
             @Override
             Fragment newInstance() {
-                return null;
+                return DemoFromCodeFragment.newInstance();
             }
 
             @Override
