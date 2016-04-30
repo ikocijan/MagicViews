@@ -14,6 +14,7 @@ import co.infinum.magicapp.ui.fragment.demo.DemoCustomViewFragment;
 import co.infinum.magicapp.ui.fragment.demo.DemoFontSpanFragment;
 import co.infinum.magicapp.ui.fragment.demo.DemoFromCodeFragment;
 import co.infinum.magicapp.ui.fragment.demo.DemoLayoutFragment;
+import co.infinum.magicapp.ui.fragment.demo.DemoWrapperFragment;
 
 /**
  * Created by jmarkovic on 20/04/16.
@@ -145,7 +146,7 @@ public class DemoActivity extends AppCompatActivity {
         WRAPPER {
             @Override
             Fragment newInstance() {
-                return null;
+                return DemoWrapperFragment.newInstance();
             }
 
             @Override

@@ -88,4 +88,10 @@ public class DemoFontSpanFragment extends Fragment {
 
         textView.setText(ssbTextView);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 }

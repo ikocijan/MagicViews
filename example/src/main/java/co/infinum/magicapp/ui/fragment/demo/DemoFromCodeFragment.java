@@ -146,6 +146,12 @@ public class DemoFromCodeFragment extends Fragment {
 
     }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        ButterKnife.unbind(this);
+    }
+
     private Space newSmallSpace(final Context context) {
         LinearLayout.LayoutParams spaceParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,

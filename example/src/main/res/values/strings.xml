@@ -24,4 +24,6 @@
 
     <string name="democustomview_description">Just as any view, MagicViews can be used as part of other compound views. Using them does not break the preview.</string>
     <string name="democustomview_label">Label:</string>
+
+    <string name="demowrapper_description">Views don\'t have to be declared as MagicViews in order to use fonts. They can be wrapped with MagicWrapper which gives them access to the same API. Views below are all normal Android views.</string>
 </resources>
