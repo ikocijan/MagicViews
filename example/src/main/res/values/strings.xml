@@ -3,4 +3,16 @@
     <string name="main_subtitle">Font and typeface showoff</string>
     
     <string name="all_settings">Settings</string>
+    <string name="demo_previous">Previous</string>
+    <string name="demo_next">Next</string>
+    <string name="demolayout_description">Most common use case of MagicViews is to create a layout resource with custom views and custom properties, like this one.</string>
+    <string name="demolayout_autocompletetextview">AutoCompleteTextView</string>
+    <string name="demolayout_button">Button</string>
+    <string name="demolayout_checkbox">CheckBox</string>
+    <string name="demolayout_checkedtextview">CheckedTextView</string>
+    <string name="demolayout_edittext">EditText</string>
+    <string name="demolayout_magicmultiautocompletetextview">MagicMultiAutoCompleteTextView</string>
+    <string name="demolayout_radiobutton_1">RadioButton 1</string>
+    <string name="demolayout_radiobutton_2">RadioButton 2</string>
+    <string name="demolayout_textview">TextView</string>
 </resources>
