@@ -21,4 +21,7 @@
     <string name="demofontspan_description">Spans can be used to modify parts of the text. With MagicFontSpan, parts of the text can have different font. This can be applicable to both MagicViews and default views.</string>
     <string name="demofontspan_magictextview">This is a MagicTextView. Even though font is set, it can be overridden by using MagicFontSpan.</string>
     <string name="demofontspan_textview">This is a normal TextView. MagicFontSpan is not exclusive to MagicViews, it can also be used on normal views.</string>
+
+    <string name="democustomview_description">Just as any view, MagicViews can be used as part of other compound views. Using them does not break the preview.</string>
+    <string name="democustomview_label">Label:</string>
 </resources>

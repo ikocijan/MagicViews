@@ -5,4 +5,7 @@
     
     <dimen name="height_space">60dp</dimen>
     <dimen name="height_space_small">20dp</dimen>
+
+    <dimen name="size_text_16">16sp</dimen>
+    <dimen name="size_text_18">18sp</dimen>
 </resources>

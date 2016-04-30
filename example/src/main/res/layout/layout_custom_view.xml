@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_16"
+        android:background="@color/colorPrimaryTransparent">
+
+    <com.ivankocijan.magicviews.views.MagicTextView
+            android:id="@+id/tv_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/democustomview_label"
+            android:textSize="@dimen/size_text_18"
+            android:labelFor="@+id/et_value"
+            app:font="LibreBaskerville-Regular.ttf"/>
+
+    <com.ivankocijan.magicviews.views.MagicEditText
+            android:id="@+id/et_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/size_text_16"
+            tools:text="Values"
+            app:font="UbuntuMono-R.ttf"/>
+
+</merge>
