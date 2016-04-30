@@ -1,16 +1,6 @@
 apply plugin: 'com.android.library'
 apply from: './quality.gradle'
 
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.0-beta3'
-    }
-}
-
 apply plugin: 'maven'
 apply plugin: 'signing'
 version = "4.0.0-alpha"
@@ -33,7 +23,7 @@ signing {
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    buildToolsVersion "23.0.3"
 
     defaultConfig {
         minSdkVersion 14
