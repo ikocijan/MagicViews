@@ -1,5 +1,6 @@
 package com.ivankocijan.magicviews.views;
 
+import com.ivankocijan.magicviews.FontView;
 import com.ivankocijan.magicviews.MagicViews;
 import com.ivankocijan.magicviews.R;
 
@@ -14,7 +15,7 @@ import android.widget.TextView;
 /**
  * Created by jmarkovic on 15/04/16.
  */
-class MagicViewDelegate {
+class MagicViewDelegate implements FontView {
 
     private static final String MATCH_ALL_CHARACTERS = "(.)";
 
@@ -29,7 +30,7 @@ class MagicViewDelegate {
     /**
      * Set's attributes to TextView if they exist
      */
-    public void setAttributes(AttributeSet attrs) {
+    void setAttributes(AttributeSet attrs) {
 
         if (attrs != null) {
             TypedArray a = this.magicView.getContext().obtainStyledAttributes(attrs, R.styleable.MagicFont);
