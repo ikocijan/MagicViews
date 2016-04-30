@@ -61,11 +61,11 @@ public class DemoFromCodeFragment extends Fragment {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        if (getView() == null) {
+        if (view == null) {
             return;
         }
 
-        final Context context = getView().getContext();
+        final Context context = view.getContext();
 
         LinearLayout.LayoutParams matchParams = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,

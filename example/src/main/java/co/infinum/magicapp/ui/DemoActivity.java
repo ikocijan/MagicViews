@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import co.infinum.magicapp.R;
+import co.infinum.magicapp.ui.fragment.demo.DemoFontSpanFragment;
 import co.infinum.magicapp.ui.fragment.demo.DemoFromCodeFragment;
 import co.infinum.magicapp.ui.fragment.demo.DemoLayoutFragment;
 
@@ -17,6 +18,8 @@ import co.infinum.magicapp.ui.fragment.demo.DemoLayoutFragment;
  * Created by jmarkovic on 20/04/16.
  */
 public class DemoActivity extends AppCompatActivity {
+
+    private static final String KEY_CURRENT_NAVIGATION = "key_current_navigation";
 
     public static Intent buildIntent(Context context) {
         return new Intent(context, DemoActivity.class);
@@ -35,7 +38,16 @@ public class DemoActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction()
                     .add(R.id.fl_content, this.currentNavigation.newInstance())
                     .commit();
+        } else {
+            this.currentNavigation = (Navigation) savedInstanceState.getSerializable(KEY_CURRENT_NAVIGATION);
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        outState.putSerializable(KEY_CURRENT_NAVIGATION, this.currentNavigation);
     }
 
     @OnClick(R.id.btn_demo_next)
@@ -100,7 +112,7 @@ public class DemoActivity extends AppCompatActivity {
         MAGIC_FONT_SPAN {
             @Override
             Fragment newInstance() {
-                return null;
+                return DemoFontSpanFragment.newInstance();
             }
 
             @Override
