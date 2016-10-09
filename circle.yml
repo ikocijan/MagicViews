@@ -2,6 +2,8 @@
 # needs to be named `circle.yml` and should be in the top level dir of the repo
 
 machine:
+  java:
+    version: oraclejdk8
   environment:
     # set the adb install tcimeout to 8 minutes (default is 2 minutes)
     ADB_INSTALL_TIMEOUT: 8
