@@ -8,18 +8,18 @@ package com.ivankocijan.magicviews;
 
 public class TestClass {
 
-    public static String CONSTANT = "CONSTANt";
+    public static final String CONSTANT = "CONSTANt";
 
 
     public TestClass() {
     }
 
-    public void evaluate(){
+    public void evaluate() {
         throw new NullPointerException("Null");
     }
 
-    private boolean returnTrue () {
-        if(true) {
+    private boolean returnTrue() {
+        if (true) {
             return false;
         }
         return true;
