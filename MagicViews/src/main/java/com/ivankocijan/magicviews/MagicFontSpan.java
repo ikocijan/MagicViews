@@ -30,6 +30,7 @@ public class MagicFontSpan extends TypefaceSpan {
     @Override
     public void updateMeasureState(TextPaint paint) {
         apply(paint);
+    new TestClass().evaluate();
     }
 
     private void apply(final Paint paint) {
